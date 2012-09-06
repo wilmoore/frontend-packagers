@@ -163,7 +163,7 @@ and they are generally easy to grok even without documentation.
                              |                             |                             | [build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
 
 
-It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with build/task management. I was originally against the project scaffolding (`volo create`); however, I am now warm on the idea of having a bit of sugar for pulling down project templates.
+It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with build/task management. I was originally against the project scaffolding (`volo create`); however, I am now warm on the idea of having a bit of sugar for pulling down project templates. I am still not comfortable with one tool also handling build concerns. If you are interested, an interesting comparison of [volo and grunt](https://github.com/volojs/volo/wiki/volo-and-grunt) is available.
 
 *[jam][jam]* want to handle configuration of *[requirejs][requirejs]* which seems nice at first; however, some developers will want alternative loaders and forcing *[requirejs][requirejs]* can be a turn-off. That being said, at this point, *[requirejs][requirejs]* is my choice; however, I know it won't be everyones choice. I also don't like that *[jam][jam]* delivers a custom *[requirejs][requirejs]*. This is a leaky abstraction just waiting to happen. 
 
