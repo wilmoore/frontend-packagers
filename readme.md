@@ -184,6 +184,10 @@ tarballs.
 Wraps non-amd code on the fly
 ------------------------------------------------------------
 
+*[volo][volo]* seems to be the only player in this space. I also like
+that this is completely optional.
+
+
  component    0 |  jam         0 |  volo      ✓✓✓
 :---------------|:---------------|:---------------
  ./components   | ./jam          | ./       
@@ -192,9 +196,9 @@ Wraps non-amd code on the fly
 Loader agnostic
 ------------------------------------------------------------
 
-*[volo][volo]* seems to the the only loader agnostic package manager of
-the three. *[component][component]* ships with it's own `require`
-function and `build` command and *[jam][jam]* ships a custom version of
+*[volo][volo]* seems to be the the only loader agnostic package manager of
+the bunch. *[component][component]* ships with it's own `require` function
+and `build` command while *[jam][jam]* ships a custom version of
 [requirejs][requirejs].
 
 
@@ -221,6 +225,28 @@ Summary
 -   (19) [Volo][volo] ✓
 -   (12) [Jam][jam]
 -   (09) [Component][component]
+
+
+Final thoughts
+------------------------------------------------------------
+
+This comparision is very subjective. My personal tastes are just
+that...my personal tastes. I've spent a single day working with all
+three tools and I come away with feeling like I could totally use either
+*[jam][jam]* or *[volo][volo]* on a real project today.
+
+I think *[jam][jam]* has a better website and a little bit more
+traction; however, I feel like *[volo][volo]* is off to a great start
+and has the most potential (especially if it sticks to package
+management as a single concern).
+
+That being said, *[jam][jam]* could steal the show by doing the
+following:
+
+-   Make [requirejs][requirejs] optional (although this is what I will
+    be using).
+-   Support more than just JavaScript.
+-   Support zip/tarballs and ad-hoc git repositories.
 
 
 Other tools you might consider
