@@ -111,7 +111,7 @@ as just a package manager and pulling in my own *[requirejs][requirejs]*.
 and manually configuring it once.
 
 
-*[volo][volo]* wants to be:
+*[volo][volo]* wants to handle:
 
 -   [package manager](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
 -   [project scaffolding](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
