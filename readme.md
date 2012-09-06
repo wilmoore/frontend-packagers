@@ -156,14 +156,14 @@ I love single purpose tools. They are easy to debug when things go wrong
 and they are generally easy to grok even without documentation.
 
 
-  `concerns`                 |  component              ✓✓✓ |  jam                     ✓✓ |  volo                     0 
+  `concerns`                 |  component              ✓✓✓ |  jam                     ✓✓ |  volo                    ✓✓
 :----------------------------|:----------------------------|:----------------------------|:----------------------------
                              | package management          | package management          | [package management](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
                              | compile                     | requirejs config            | [project scaffolding](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
                              |                             |                             | [build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
 
 
-It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with project scaffolding and build/task management. I am personally fond of single purpose build tools like make, rake, or grunt. I don't really want it bundled into my package manager.
+It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with build/task management. I was originally against the project scaffolding (`volo create`); however, I am now warm on the idea of having a bit of sugar for pulling down project templates.
 
 *[jam][jam]* want to handle configuration of *[requirejs][requirejs]* which seems nice at first; however, some developers will want alternative loaders and forcing *[requirejs][requirejs]* can be a turn-off. That being said, at this point, *[requirejs][requirejs]* is my choice; however, I know it won't be everyones choice. I also don't like that *[jam][jam]* delivers a custom *[requirejs][requirejs]*. This is a leaky abstraction just waiting to happen. 
 
@@ -226,9 +226,9 @@ support git/github via the manifest (`package.json`) file.
 
   `source`     |  component ✓✓ |  jam        ✓ |  volo     ✓✓
 :--------------|:-------------:|:-------------:|:-------------:
- git/github    | yes           | cli only      | via zip/tarball
+ git/github    | yes           | cli only      | yes
  private repos | yes           | coming soon   | coming soon
- zip/tarball   | no            | cli only      | yes
+ zip/tarball   | no            | cli only      | zipball only
  registry      | no            | yes           | no
 
 
@@ -273,7 +273,7 @@ CSS and HTML a prioroty along with JavaScript.
 Summary
 ------------------------------------------------------------
 
--   (16) [Volo][volo] ✓
+-   (18) [Volo][volo] ✓
 -   (13) [Jam][jam]
 -   (12) [Component][component]
 
