@@ -229,6 +229,12 @@ Other tools you might consider
 -   [Tiki](http://sirtiki.com)
 
 
+Contributing
+------------------------------------------------------------
+
+Please feel free to contribute to this. If you feel I should be rating
+on more categories or if you feel a score is incorrect or outdated,
+please speak up.
 
 
 
