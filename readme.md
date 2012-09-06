@@ -1,13 +1,83 @@
 Front-End Package Manager Comparison
 ============================================================
 
-The finalists:
+
+Why do this?
+------------------------------------------------------------
+
+It is about time we have a decent package manager for the browser.  Front-end development is serious stuff and there is no good reason for us to continue with sub-par tools or no tools at all.
+
+These problems have been solved on the server but we need the same for the browser.
+
+
+The contenders
+------------------------------------------------------------
+
+First of all, there are other players in the game; however, these are the three that have the most potential and solve the problems that I believe need solving. Perhaps you see it differently...this is my opinion.
 
 -   [component][component]
 -   [jam][jam]
 -   [volo][volo]
 
+To be completely fair, *[component][component]* attempts to solve a similar, but slightly different set of problems. The confusing bit is that many of [components][component] concerns overlap with the tools that set out to be just package managers.
+
+Finally, I really appreciate the effort that has gone into all of these.  It is a task that no many are willing to take on so I want to thank all of the authors for putting in the time and energy.
+
+
+What is a package manager?
+------------------------------------------------------------
+
+A package manager is a tool that allows you to specify a list of
+depeendencies for your library or application.
+
+For example, I may be writing a library that handles HTML5Video. The
+library likely needs to infer the mime type; thus, I'd list something
+like [component/mime](http://github.com/component/mime) as a dependency.
+
+You might be thinking that we should also include a unit testing
+framework. Maybe, or maybe not. Something similar like node-tap should
+work; however, a simple script using `assert` may be a fine idea as
+well.
+
+Another example might be that you are writing an application (a todo
+list app perhaps). The most obvious dependencies for such an app might
+be (assumes you won't use a monolithic MV* framework):
+
+-   Event manager (e.g. Event Emitter)
+-   Object attribute manager
+-   Router
+-   Unit Test Framework (e.g. Mocha)
+
+The idea here is that the application developer should worry about just
+this pieces of the application that are unique to the application. The
+reusable parts should be dependencies.
+
+The *[component][component]* tool stands out as more of a framework that
+has just enough convention to allow you to start building up modular
+components for your application.
+
+To be fair *[component][component]* doesn't try to compete with the pure
+package managers. It wants to manage all of your application's components
+and/or widgets. For example, you may have built a color picker component.
+The color picker component is an aggregation of HTML, CSS, JavaScript,
+and maybe even icons and fonts.  *[component][component]* wants to
+concatenate and load those for you.
+
+On the other hand, *[jam][jam]* and *[volo][volo]* are only package managers
+in the realm of say [Bundler](http://gembundler.com/), [NPM](https://npmjs.org/),
+or [Composer](http://getcomposer.org/).
+
+If you want to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
+
+
+How is this thing scored?
+------------------------------------------------------------
+
 Several categories with a maximum of (3) points per category per tool.
+
+A tool can score 0 for a category. That doesn't necessarily mean it is a
+true fail; however, it means that it doesn't meet my personal criteria
+for the category.
 
 
 Configuration File
@@ -52,40 +122,31 @@ Below is a copy of a `jam` enabled `package.json` file:
     }
 
 
-Package target directory
+Package installation directory
 ------------------------------------------------------------
 
 Where are downloaded packages placed?
 
+ 
+  `path`        |  component  ✓✓✓             |  jam                    ✓✓✓ |  volo                   ✓✓✓ 
+:---------------|:----------------------------|:----------------------------|:----------------------------
+ default path   | ./components                | ./jam                       | ./
+ custom path    | component install --out dir | `jam.packageDir`            | `volo.{baseDir,baseUrl}`, `amd.baseUrl`
 
- component    0 |  jam       ✓✓✓ |  volo        ✓ 
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
 
+I don't hate any of the defaults. If you use NodeJS/NPM, you've likely gotten used to the
+`./node_modules` directory. Sure, it's ugly, but it works and [it ain't changing](https://github.com/joyent/node/issues/3694#issuecomment-6937179).
 
-I don't love any of the default choices; although, both *[jam][jam]* and
-*[volo][volo]* allow you to override the package directory via the
-`package.json` file. *[jam][jam]* also allows you to create a user global
-`$HOME/.jamrc`.
+That being said, each tool allows you to change the package installation directory. Choice allows you to use the tool with workflows that were not
+immediately obvious to the tool author.
 
-Again, with *[volo][volo]* I had to dig for this information. Even worse
-is that *[volo][volo]* supports three different keys:
+*[volo][volo]* has a pretty complex algorithm which says:
 
-- `volo.baseDir`
-- `volo.baseUrl`
-- `amd.baseUrl`
-
-If none of those are defined, it:
+If not defined in the `package.json` file, it:
 
 -   Looks for a js directory
 -   Looks for a scripts directory
 -   Otherwise, the current working directory is used
-
-*[jam][jam]* is simple...it looks for a `jam.packageDir` property and if
-not found, uses the `./jam` directory.
-
-Unfortunately, *[component][component]* uses the directory `./components`
-which isn't terrible, but there is no obvious way to override.
 
 
 Single Purpose Tool
@@ -95,66 +156,67 @@ I love single purpose tools. They are easy to debug when things go wrong
 and they are generally easy to grok even without documentation.
 
 
- component  ✓✓✓ |  jam        ✓✓ |  volo        0
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+  `concerns`                 |  component              ✓✓✓ |  jam                     ✓✓ |  volo                     0 
+:----------------------------|:----------------------------|:----------------------------|:----------------------------
+                             | package management          | package management          | [package management](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
+                             | compile                     | requirejs config            | [project scaffolding](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
+                             |                             |                             | [build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
 
 
-*[component][component]* wins this category hands down. It downloads or
-builds packages...that's it.
+It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with project scaffolding and build/task management. I am personally fond of single purpose build tools like make, rake, or grunt. I don't really want it bundled into my package manager.
 
-*[jam][jam]* almost had this one. Unfortunately, *[jam][jam]* handles
-configuration of *[requirejs][requirejs]* which seems nice at first;
-however, this falls apart if you decide you want to use an alternative
-loader. That being said, there is nothign stopping me from using *[jam][jam]*
-as just a package manager and pulling in my own *[requirejs][requirejs]*.
-and manually configuring it once.
+*[jam][jam]* want to handle configuration of *[requirejs][requirejs]* which seems nice at first; however, some developers will want alternative loaders and forcing *[requirejs][requirejs]* can be a turn-off. That being said, at this point, *[requirejs][requirejs]* is my choice; however, I know it won't be everyones choice. I also don't like that *[jam][jam]* delivers a custom *[requirejs][requirejs]*. This is a leaky abstraction just waiting to happen. 
 
-
-*[volo][volo]* wants to be:
-
--   [a package manager](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
--   [a project scaffolding tool](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
--   [a build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
-
-*[volo][volo]* is trying to do way too much.
+Like I mentioned earlier, *[component][component]* is a little bit different; however, it does a good job of sticking to a conceptual theme and delivering in that problem space.
 
 
 Ease of development
 ------------------------------------------------------------
 
-Each package manager provides a particular style of workflow. I am
-looking for the most natural and friction-free flow possible. I don't
-mind a build step; however, I don't think it should be required during
-development.
+Each package manager provides a particular style of workflow. I am looking for the most natural and friction-free flow possible. I don't mind a build step; however, I don't want to have to complile everything for every little change.
 
- component    0 |  jam       ✓✓✓ |  volo      ✓✓✓
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+The following table lists the command you need to run after every code change.
+
+
+ component      0 |  jam       ✓✓✓ |  volo      ✓✓✓
+:-----------------|:---------------|:---------------
+ component build  |                | 
 
 
 -   *[component][component]* was rated low here because you are required
     to run `component build` after each change. This is easily remedied
     with a file watcher or even `watch(1)`, but I'm still not fond of it
     being a requirement.
--   Neither *[jam][jam]* nor *[volo][volo]* require a build step to
-    realize code changes.
+-   *[jam][jam]* / *[volo][volo]* do not require a build step to realize code changes.
 
 
 Registry free
 ------------------------------------------------------------
 
-I can't realistically score this category as I'm torn on the issue.
+There are several arguments for and against having a central registry.
+What it really boils down to is the potential for naming conflicts at
+scale.
 
-No score.
+This is a real issue with NPM today; however, that doesn't mean it can't
+be [done well][packagist].
 
 
  component    0 |  jam         0 |  volo        0
 :---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+
+If we are going to have a registry, I think it should:
+
+-   Enforce [user/package namespacing][packagist] at a minimum.
+-   If it is a bottleneck, it is useless, so make it fast and always
+    available.
+-   The registry shouldn't be the only way to obtain dependencies. In
+    most cases, I'd prefer to retrieve directly from git/github.
+
+Currently, *[jam][jam]* is the only one with a registry; however, it
+currently suffers the same [issues as NPM](https://github.com/wilmoore/frontend-packagers/issues/1#issuecomment-8338583).
 
 
-Sources: git, github
+Package installation sources
 ------------------------------------------------------------
 
 All of the package managers support git/github repositories as sources;
@@ -162,35 +224,24 @@ however, *[jam][jam]* is the only one that doesn't currently seem to
 support git/github via the manifest (`package.json`) file.
 
 
- component  ✓✓✓ |  jam         ✓ |  volo      ✓✓✓
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+  `source`     |  component ✓✓ |  jam        ✓ |  volo     ✓✓
+:--------------|:-------------:|:-------------:|:-------------:
+ git/github    | yes           | cli only      | via zip/tarball
+ private repos | yes           | coming soon   | coming soon
+ zip/tarball   | no            | cli only      | yes
+ registry      | no            | yes           | no
 
 
-Sources: zipball/tarball
+Module formats
 ------------------------------------------------------------
 
-This is not supported via *[component][component]* as everything must be
-a github repository. *[jam][jam]* seems to only support registered
-packages, which leaves only *[volo][volo]* supporting zipballs and
-tarballs.
 
+  `format`          |  component   ✓ |  jam         ✓ |  volo      ✓✓
+:-------------------|:--------------:|:--------------:|:--------------:
+ Node/CJS           |  yes (no wrap) |  yes (wrapped) |  yes (wrapped)
+ AMD                |  no            |  yes           |  yes         
+ Auto-Wrap Globals  |  no            |  no            |  yes         
 
- component    0 |  jam         ✓ |  volo      ✓✓✓
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
-
-
-Wraps non-amd code on the fly
-------------------------------------------------------------
-
-*[volo][volo]* seems to be the only player in this space. I also like
-that this is completely optional.
-
-
- component    0 |  jam         0 |  volo      ✓✓✓
-:---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
 
 
 Loader agnostic
@@ -202,9 +253,9 @@ and `build` command while *[jam][jam]* ships a custom version of
 [requirejs][requirejs].
 
 
- component    0 |  jam         0 |  volo      ✓✓✓
+  component   0 |  jam         0 |  volo      ✓✓✓
 :---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+  no            |  no            |  yes
 
 
 Packages include JavaScript, CSS, HTML
@@ -214,17 +265,17 @@ Packages include JavaScript, CSS, HTML
 CSS and HTML a prioroty along with JavaScript.
 
 
- component  ✓✓✓ |  jam         0 |  volo        0
+  component ✓✓✓ |  jam         0 |  volo        0
 :---------------|:---------------|:---------------
- ./components   | ./jam          | ./       
+  yes           |  no            |  no      
 
 
 Summary
 ------------------------------------------------------------
 
--   (19) [Volo][volo] ✓
--   (12) [Jam][jam]
--   (09) [Component][component]
+-   (16) [Volo][volo] ✓
+-   (13) [Jam][jam]
+-   (12) [Component][component]
 
 
 Final thoughts
@@ -258,11 +309,12 @@ Other tools you might consider
 Contributing
 ------------------------------------------------------------
 
+I am sure I've made a few gramatical and spelling errors. I've probably
+even made comparison errors in a few spots.
+
 Please feel free to contribute to this. If you feel I should be rating
 on more categories or if you feel a score is incorrect or outdated,
-please speak up.
-
-
+please speak up or submit a pull request.
 
 
 
@@ -272,3 +324,4 @@ please speak up.
 [jam]:       http://jamjs.org
 [volo]:      http://volojs.org
 [requirejs]: http://requirejs.org/
+[packagist]: http://packagist.org/about
