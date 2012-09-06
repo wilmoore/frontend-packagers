@@ -64,7 +64,7 @@ Where are downloaded packages placed?
 
 
 I don't love any of the default choices; although, both *[jam][jam]* and
-*[volo][volo]* allow you to override this package directory via the
+*[volo][volo]* allow you to override the package directory via the
 `package.json` file. *[jam][jam]* also allows you to create a user global
 `$HOME/.jamrc`.
 
