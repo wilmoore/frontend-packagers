@@ -235,7 +235,7 @@ that...my personal tastes. I've spent a single day working with all
 three tools and I come away with feeling like I could totally use either
 *[jam][jam]* or *[volo][volo]* on a real project today.
 
-I think *[jam][jam]* has a better website and a little bit more
+I think *[jam][jam]* has superior documentation and a little bit more
 traction; however, I feel like *[volo][volo]* is off to a great start
 and has the most potential (especially if it sticks to package
 management as a single concern).
