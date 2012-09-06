@@ -111,11 +111,11 @@ as just a package manager and pulling in my own *[requirejs][requirejs]*.
 and manually configuring it once.
 
 
-*[volo][volo]* wants to handle:
+*[volo][volo]* wants to be:
 
--   [package manager](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
--   [project scaffolding](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
--   [build/deployment tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
+-   [a package manager](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
+-   [a project scaffolding tool](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
+-   [a build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
 
 *[volo][volo]* is trying to do way too much.
 
