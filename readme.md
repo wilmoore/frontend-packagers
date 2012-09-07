@@ -134,8 +134,8 @@ Where are downloaded packages placed?
  custom path    | component install --out dir | `jam.packageDir`            | `volo.{baseDir,baseUrl}`, `amd.baseUrl`
 
 
-I don't hate any of the defaults. If you use NodeJS/NPM, you've likely gotten used to the
-`./node_modules` directory. Sure, it's ugly, but it works and [it ain't changing](https://github.com/joyent/node/issues/3694#issuecomment-6937179).
+I don't hate any of the defaults. If you use NodeJS/NPM, you've likely gotten used to the `./node_modules` directory.
+Sure, it's ugly, but it works and [it ain't](https://twitter.com/dshaw/status/244118074264010752) [changing](https://github.com/joyent/node/issues/3694#issuecomment-6937179).
 
 That being said, each tool allows you to change the package installation directory. Choice allows you to use the tool with workflows that were not
 immediately obvious to the tool author.
