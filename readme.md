@@ -303,7 +303,17 @@ following:
 Other tools you might consider
 ------------------------------------------------------------
 
+Package Managers
+
 -   [Tiki](http://sirtiki.com)
+
+Loaders
+
+-   [inject](https://github.com/linkedin/inject)
+-   [curl](https://github.com/cujojs/curl)
+-   [requirejs](http://requirejs.org)
+-   [cajon](https://github.com/requirejs/cajon)
+-   [almond](https://github.com/jrburke/almond)
 
 
 Contributing
