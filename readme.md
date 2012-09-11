@@ -128,10 +128,11 @@ Package installation directory
 Where are downloaded packages placed?
 
  
-  `path`        |  component  ✓✓✓             |  jam                    ✓✓✓ |  volo                   ✓✓✓ 
-:---------------|:----------------------------|:----------------------------|:----------------------------
- default path   | ./components                | ./jam                       | ./
- custom path    | component install --out dir | `jam.packageDir`            | `volo.{baseDir,baseUrl}`, `amd.baseUrl`
+  `path`                 |  bower                  |  component  ✓✓✓         |  jam                ✓✓✓ |  volo               ✓✓✓ 
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+ default path            | -                       | ./components            | ./jam                   | ./
+ custom path             | -                       | install --out dir       | `jam.packageDir`        | `volo.{baseDir,baseUrl}`
+                         |                         |                         |                         | `amd.baseUrl`
 
 
 I don't hate any of the defaults. If you use NodeJS/NPM, you've likely gotten used to the `./node_modules` directory.
