@@ -154,20 +154,19 @@ If not defined in `package.json` it:
 -   Otherwise, the current working directory is used
 
 
-Single Purpose Tool
+Responsibilities
 ------------------------------------------------------------
 
-I love single purpose tools. They are easy to debug when things go wrong
-and they are generally easy to grok even without documentation.
+The following table details the responsibilities the given tool takes on.
 
 
-  Concerns               |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Responsibilities       |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `package management`    |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `project scaffolding`   |  ✗                      |  ✗                      |  ✗                      |  ✓                     
- `build automation`      |  ✗                      |  ✗                      |  ✗                      |  ✓                      
- `script/module loading` |  ✗                      |  ✗                      |  ✓                      |  ✓                      
- `compile/build`         |  ✗                      |  ✓                      |  ✗                      |  ✗                      
+ `package management`      |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `project scaffolding`     |  ✗                      |  ✗                      |  ✗                      |  ✓                     
+ `build automation`        |  ✗                      |  ✗                      |  ✗                      |  ✓                      
+ `script/module loading`   |  ✗                      |  ✗                      |  ✓                      |  ✓                      
+ `compile/build`           |  ✗                      |  ✓                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -183,7 +182,7 @@ The following table details which tools require a build/compile step during deve
 
   Build/Compile?         |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                     |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
+ `?`                       |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -199,7 +198,7 @@ The following table details which tools expose a central "registry".
 
   Registry?              |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                     |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+ `?`                       |  ✓                      |  ✗                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
@@ -216,10 +215,10 @@ The following table details the method by which each tool is able to retrieve pa
 
   Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
- `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
- `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
- `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+ `git / github`            |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
+ `private repositories`    |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
+ `zip / tarball`           |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+ `registry`                |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -235,10 +234,10 @@ The following table details the JavaScript format each tool expects/handles.
 
   Format                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Global Script`         |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `AMD`                   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
- `CommonJS/NodeJS`       |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
- `CommonJS (WRAPPED)`    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `Global Script`           |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `AMD`                     |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `CommonJS/NodeJS`         |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
+ `CommonJS (WRAPPED)`      |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
 
 
 **NOTES**:
@@ -280,8 +279,8 @@ The following table details the module/script loader supported by each tool.
 
   Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Bring your own loader` |  ✓                      |  ✗                      |  ✗                      |  ✓                      
- `Includes a Loader`     |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
+ `Bring your own loader`   |  ✓                      |  ✗                      |  ✗                      |  ✓                      
+ `Includes a Loader`       |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
 
 
 **NOTES**:
