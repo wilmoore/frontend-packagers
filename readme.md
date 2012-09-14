@@ -271,6 +271,11 @@ There are several JavaScript formatting methodologies:
          });
 
 
+**NOTES**:
+
+-  N/A
+
+
 Module / Script Loader
 ------------------------------------------------------------
 
