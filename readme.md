@@ -36,13 +36,13 @@ A package manager is a tool that allows you to specify a list of dependencies fo
 How is this thing evaluated?
 ------------------------------------------------------------
 
-Given that tool choice is extremely subjective, you (and/or your team) should come up with your own weighting system and score each tool accordingly.
+Since tool choice is extremely subjective, you (and/or your team) should come up with your own weighting system and score each tool accordingly.
 
 
 Configuration File
 ------------------------------------------------------------
 
-The following table provides the name of the "manifest" file where you specific dependencies and/or the details of your package.
+The following table provides the name of the "manifest" file where you specify dependencies and/or the details of your package.
 
 
   Configuration          |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
@@ -131,7 +131,7 @@ Sample *[volo][volo]* enabled `package.json` file:
 -  N/A
 
 
-Package installation directory
+Package Installation Location
 ------------------------------------------------------------
 
 The following table details where each tool stores downloaded packages.
