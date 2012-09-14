@@ -140,8 +140,7 @@ The following table details where each tool stores downloaded packages.
   Path                   |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `default path`           |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`            |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}
-                         |                         |                         |                         |  amd.baseDir
+  `custom path`            |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
 
 
 **NOTES**:
@@ -164,11 +163,11 @@ and they are generally easy to grok even without documentation.
 
   Concerns               |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  package management     |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  project scaffolding    |  ✗                      |  ✗                      |  ✗                      |  ✓                     
-  build automation       |  ✗                      |  ✗                      |  ✗                      |  ✓                      
-  script/module loading  |  ✗                      |  ✗                      |  ✓                      |  ✓                      
-  compile/build          |  ✗                      |  ✓                      |  ✗                      |  ✗                      
+ `package management`    |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `project scaffolding`   |  ✗                      |  ✗                      |  ✗                      |  ✓                     
+ `build automation`      |  ✗                      |  ✗                      |  ✗                      |  ✓                      
+ `script/module loading` |  ✗                      |  ✗                      |  ✓                      |  ✓                      
+ `compile/build`         |  ✗                      |  ✓                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
