@@ -183,7 +183,7 @@ The following table details which tools require a build/compile step during deve
 
   Build/Compile?         |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  ?                      |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
+ `?`                     |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -199,7 +199,7 @@ The following table details which tools expose a central "registry".
 
   Registry?              |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  ?                      |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+ `?`                     |  ✓                      |  ✗                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
@@ -216,10 +216,10 @@ The following table details the method by which each tool is able to retrieve pa
 
   Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  git / github           |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
-  private repositories   |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
-  zip / tarball          |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
-  registry               |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+ `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
+ `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
+ `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+ `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
