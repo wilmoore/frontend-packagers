@@ -320,15 +320,15 @@ The following table details the the types of source files that can be contained 
 Final thoughts
 ------------------------------------------------------------
 
-*[volo][volo]* is off to a great start as well; hopefully it sticks to package management as a single concern.
+*[volo][volo]* is off to a great start; hopefully it sticks to package management as a single concern.
 
-*[jam][jam]* currently has the most traction; however, *[bower][bower]* seems to have generated more buzz than all of them in just under a week.  Of course, twitter and many [well-known developers](https://github.com/twitter/bower/graphs/contributors) being behind it certainly helped with that.
+*[jam][jam]* currently has the most traction and a *very* [responsive and friendly author](https://twitter.com/caolan); however, *[bower][bower]* seems to have generated more buzz than all of them in just under a week. Of course, twitter and many [well-known developers](https://github.com/twitter/bower/graphs/contributors) being behind it certainly helped with that.
 
 *[jam][jam]* could steal the show by doing the following:
 
 -   Use *[bower][bower]* under the hood.
 -   Make the loader optional and allow loader plug-ins (i.e. [requirejs][requirejs]).
--   Support zip/tarballs and ad-hoc git repositories via the manifest.
+-   Support zip/tarballs and ad-hoc git repositories via the manifest (but you get that for free by using *[bower][bower]*.
 
 Library and component authors, may want to consider using deploying behind a [UMD][umdjs] wrapper and support the various package managers by authoring both {component,package}.json for front-end and npm (where appropriate).
 
@@ -336,12 +336,7 @@ Library and component authors, may want to consider using deploying behind a [UM
 Contributing
 ------------------------------------------------------------
 
-I am sure I've made a few gramatical and spelling errors. I've probably
-even made comparison errors in a few spots.
-
-Please feel free to contribute to this. If you feel I should be rating
-on more categories or if you feel a score is incorrect or outdated,
-please speak up or submit a pull request.
+I am sure I've made a few gramatical and spelling errors. I've probably even made comparison errors in a few spots. Please feel free to contribute to this. If you feel I should be rating on more categories or if you feel a score is incorrect or outdated, please speak up or submit a pull request.
 
 
 Symbol Key
