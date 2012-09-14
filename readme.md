@@ -33,10 +33,10 @@ What is a package manager?
 A package manager is a tool that allows you to specify a list of dependencies for your library or application. The tools depicted here are similar in scope to [Bundler](http://gembundler.com/), [NPM](https://npmjs.org/), or [Composer](http://getcomposer.org/).
 
 
-How is this thing scored?
+How is this thing evaluated?
 ------------------------------------------------------------
 
-Given that tool choice is extremely subjective, you (and/or your team) should come up with your own weighting system and score each tool accordingly. Though I have a personal opinions about each tool regarding each category, I am leaving that opinion out of this text in order to allow you to judge for yourself.
+Given that tool choice is extremely subjective, you (and/or your team) should come up with your own weighting system and score each tool accordingly.
 
 
 Configuration File
