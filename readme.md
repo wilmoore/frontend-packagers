@@ -235,10 +235,10 @@ The following table details the JavaScript format each tool expects/handles.
 
   Format                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  Global Script          |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  AMD                    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
-  CommonJS/NodeJS        |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
-  CommonJS (WRAPPED)     |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `Global Script`         |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `AMD`                   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `CommonJS/NodeJS`       |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
+ `CommonJS (WRAPPED)`    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
 
 
 **NOTES**:
@@ -280,8 +280,8 @@ The following table details the module/script loader supported by each tool.
 
   Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  Bring your own loader  |  ✓                      |  ✗                      |  ✗                      |  ✓                      
-  Includes a Loader      |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
+ `Bring your own loader` |  ✓                      |  ✗                      |  ✗                      |  ✓                      
+ `Includes a Loader`     |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
 
 
 **NOTES**:
@@ -303,9 +303,9 @@ The following table details the the types of source files that can be contained 
 
   Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  JavaScript             |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  HTML                   |  ✓                      |  ✓                      |  ✓                      |  ✗                      
-  CSS                    |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+ `JavaScript`              |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `HTML`                    |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+ `CSS`                     |  ✓                      |  ✓                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
