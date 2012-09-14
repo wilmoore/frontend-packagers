@@ -13,7 +13,7 @@ I appreciate the effort that has gone into all of these. It is awesome to see re
 The contenders
 ------------------------------------------------------------
 
-First of all, there are other players in the game; however, the following have caught my attention:
+Of course, there are other players in the game; however, the following have caught my attention:
 
 -   [bower][bower]
 -   [component][component]
