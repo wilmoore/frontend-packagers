@@ -190,7 +190,7 @@ The following table details which tools require a build/compile step during deve
 -  N/A
 
 
-Registry free
+Central Registry
 ------------------------------------------------------------
 
 The following table details which tools expose a central "registry".
