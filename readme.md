@@ -5,96 +5,83 @@ Front-End Package Manager Comparison
 Why do this?
 ------------------------------------------------------------
 
-It is about time we have a decent package manager for the browser.  Front-end development is serious stuff and there is no good reason for us to continue with sub-par tools or no tools at all.
-
-These problems have been solved on the server but we need the same for the browser.
-
+It is about time for front-end developers to have a decent package manager. Front-end development is [serious business](http://qr.ae/8aIrF) and there is no good reason for us to continue with sub-par tools or no tools at all.
 
 The contenders
 ------------------------------------------------------------
 
-First of all, there are other players in the game; however, these are the three that have the most potential and solve the problems that I believe need solving. Perhaps you see it differently...this is my opinion.
+First of all, there are other players in the game; however, these are ones that have caught my attention. If you feel I've left out a worthy contender, please let me know.
 
+-   [bower][bower]
 -   [component][component]
 -   [jam][jam]
 -   [volo][volo]
 
-To be completely fair, *[component][component]* attempts to solve a similar, but slightly different set of problems. The confusing bit is that many of [components][component] concerns overlap with the tools that set out to be just package managers.
+NOTES:
 
-Finally, I really appreciate the effort that has gone into all of these.  It is a task that no many are willing to take on so I want to thank all of the authors for putting in the time and energy.
+-  *[component][component]* is more of a concept and a framework for building and distributing front-end components. If you'd like to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
+-  *[bower][bower]* is meant to be consumed by higher-level tools and frameworks.
+
+I appreciate the effort that has gone into all of these. It is awesome to see really talented developers taking on the task and sharing the result with the rest of us.
 
 
 What is a package manager?
 ------------------------------------------------------------
 
-A package manager is a tool that allows you to specify a list of
-depeendencies for your library or application.
-
-For example, I may be writing a library that handles HTML5Video. The
-library likely needs to infer the mime type; thus, I'd list something
-like [component/mime](http://github.com/component/mime) as a dependency.
-
-You might be thinking that we should also include a unit testing
-framework. Maybe, or maybe not. Something similar like node-tap should
-work; however, a simple script using `assert` may be a fine idea as
-well.
-
-Another example might be that you are writing an application (a todo
-list app perhaps). The most obvious dependencies for such an app might
-be (assumes you won't use a monolithic MV* framework):
-
--   Event manager (e.g. Event Emitter)
--   Object attribute manager
--   Router
--   Unit Test Framework (e.g. Mocha)
-
-The idea here is that the application developer should worry about just
-this pieces of the application that are unique to the application. The
-reusable parts should be dependencies.
-
-The *[component][component]* tool stands out as more of a framework that
-has just enough convention to allow you to start building up modular
-components for your application.
-
-To be fair *[component][component]* doesn't try to compete with the pure
-package managers. It wants to manage all of your application's components
-and/or widgets. For example, you may have built a color picker component.
-The color picker component is an aggregation of HTML, CSS, JavaScript,
-and maybe even icons and fonts.  *[component][component]* wants to
-concatenate and load those for you.
-
-On the other hand, *[jam][jam]* and *[volo][volo]* are only package managers
-in the realm of say [Bundler](http://gembundler.com/), [NPM](https://npmjs.org/),
-or [Composer](http://getcomposer.org/).
-
-If you want to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
+A package manager is a tool that allows you to specify a list of dependencies for your library or application. The tools depicted here are similar in scope to [Bundler](http://gembundler.com/), [NPM](https://npmjs.org/), or [Composer](http://getcomposer.org/).
 
 
 How is this thing scored?
 ------------------------------------------------------------
 
-Several categories with a maximum of (3) points per category per tool.
-
-A tool can score 0 for a category. That doesn't necessarily mean it is a
-true fail; however, it means that it doesn't meet my personal criteria
-for the category.
+Given that tool choice is extremely subjective, you (and/or your team) should come up with your own weighting system and score each tool accordingly. Though I have a personal opinions about each tool regarding each category, I am leaving that opinion out of this text in order to allow you to judge for yourself.
 
 
 Configuration File
 ------------------------------------------------------------
 
-File which details the packages/components your project depends on.
+The following table provides the name of the "manifest" file where you specific dependencies and/or the details of your package.
 
 
- component    0 |  jam       ✓✓✓ |  volo      ✓✓✓
-:---------------|:---------------|:---------------
- component.json | package.json   | package.json + volofile
+  Configuration          |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  `filename`               |  component.json         |  component.json         |  package.json           |  package.json, volofile
 
 
-Both *[jam][jam]* and *[volo][volo]* support `package.json`, while
-*[component][component]* supports a `component.json` file.
+Sample *[bower][bower]* enabled `component.json` file:
 
-Below is a copy of a `jam` enabled `package.json` file:
+    {
+
+      "name":     "myProject",
+      "version":  "1.0.0",
+      "main":     "./path/to/main.css",
+      "dependencies": {
+        "jquery": "~1.7.2"
+      }
+
+    }
+
+
+Sample *[component][component]* enabled `component.json` file:
+
+    {
+
+      "name":        "tip",
+      "repo":        "component/tip",
+      "description": "Tip component",
+      "version":     "0.0.1",
+      "keywords":    ["tooltip", "tip", "ui"],
+      "dependencies": {
+        "component/emitter": "*",
+        "component/jquery":  "*"
+      },
+      "scripts": ["index.js", "template.js"],
+      "styles":  ["tip.css"]
+
+    }
+
+
+Sample *[jam][jam]* enabled `package.json` file:
 
     {
 
@@ -122,31 +109,47 @@ Below is a copy of a `jam` enabled `package.json` file:
     }
 
 
+Sample *[volo][volo]* enabled `package.json` file:
+
+    {
+
+      "volo": {
+        "dependencies": {
+          "jquery":     "github:jquery/jquery/1.8.1",
+          "underscore": "github:amdjs/underscore/1.3.3",
+          "backbone":   "github:documentcloud/backbone/0.9.2"
+        }
+      }
+
+    }
+
+
+**NOTES**:
+
+-  N/A
+
+
 Package installation directory
 ------------------------------------------------------------
 
-Where are downloaded packages placed?
+The following table details where each tool stores downloaded packages.
 
  
-  `path`                 |  bower                  |  component  ✓✓✓         |  jam                ✓✓✓ |  volo               ✓✓✓ 
+  Path                   |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- default path            | -                       | ./components            | ./jam                   | ./
- custom path             | -                       | install --out dir       | `jam.packageDir`        | `volo.{baseDir,baseUrl}`
-                         |                         |                         |                         | `amd.baseUrl`
+  `default path`           |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
+  `custom path`            |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}
+                         |                         |                         |                         |  amd.baseDir
 
 
-I don't hate any of the defaults. If you use NodeJS/NPM, you've likely gotten used to the `./node_modules` directory.
-Sure, it's ugly, but it works and [it ain't](https://twitter.com/dshaw/status/244118074264010752) [changing](https://github.com/joyent/node/issues/3694#issuecomment-6937179).
+**NOTES**:
 
-That being said, each tool allows you to change the package installation directory. Choice allows you to use the tool with workflows that were not
-immediately obvious to the tool author.
+*[volo][volo]* has a fairly complex algorithm.
 
-*[volo][volo]* has a pretty complex algorithm which says:
+If not defined in `package.json` it:
 
-If not defined in the `package.json` file, it:
-
--   Looks for a js directory
--   Looks for a scripts directory
+-   Looks for a ./js directory
+-   Looks for a ./scripts directory
 -   Otherwise, the current working directory is used
 
 
@@ -157,164 +160,172 @@ I love single purpose tools. They are easy to debug when things go wrong
 and they are generally easy to grok even without documentation.
 
 
-  `concerns`                 |  component              ✓✓✓ |  jam                     ✓✓ |  volo                    ✓✓
-:----------------------------|:----------------------------|:----------------------------|:----------------------------
-                             | package management          | package management          | [package management](https://github.com/volojs/volo/blob/master/commands/add/doc.md)
-                             | compile                     | requirejs config            | [project scaffolding](https://github.com/volojs/volo/blob/master/commands/create/doc.md)
-                             |                             |                             | [build tool](https://github.com/volojs/volo/wiki/Creating-a-volofile)
+  Concerns               |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  package management     |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  project scaffolding    |  ✗                      |  ✗                      |  ✗                      |  ✓                     
+  build automation       |  ✗                      |  ✗                      |  ✗                      |  ✓                      
+  script/module loading  |  ✗                      |  ✗                      |  ✓                      |  ✓                      
+  compile/build          |  ✗                      |  ✓                      |  ✗                      |  ✗                      
 
 
-It seems that all of the tools take on a bit of extra responsibility; however, it is *[volo][volo]* that goes a bit overboard with build/task management. I was originally against the project scaffolding (`volo create`); however, I am now warm on the idea of having a bit of sugar for pulling down project templates. I am still not comfortable with one tool also handling build concerns. If you are interested, an interesting comparison of [volo and grunt](https://github.com/volojs/volo/wiki/volo-and-grunt) is available.
+**NOTES**:
 
-*[jam][jam]* want to handle configuration of *[requirejs][requirejs]* which seems nice at first; however, some developers will want alternative loaders and forcing *[requirejs][requirejs]* can be a turn-off. That being said, at this point, *[requirejs][requirejs]* is my choice; however, I know it won't be everyones choice. I also don't like that *[jam][jam]* delivers a custom *[requirejs][requirejs]*. This is a leaky abstraction just waiting to happen. 
-
-Like I mentioned earlier, *[component][component]* is a little bit different; however, it does a good job of sticking to a conceptual theme and delivering in that problem space.
+-  An interesting comparison of [volo and grunt](https://github.com/volojs/volo/wiki/volo-and-grunt).
 
 
-Ease of development
+Build/Compile
 ------------------------------------------------------------
 
-Each package manager provides a particular style of workflow. I am looking for the most natural and friction-free flow possible. I don't mind a build step; however, I don't want to have to complile everything for every little change.
-
-The following table lists the command you need to run after every code change.
+The following table details which tools require a build/compile step during development.
 
 
- component      0 |  jam       ✓✓✓ |  volo      ✓✓✓
-:-----------------|:---------------|:---------------
- component build  |                | 
+  Build/Compile?         |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  ?                      |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
 
 
--   *[component][component]* was rated low here because you are required
-    to run `component build` after each change. This is easily remedied
-    with a file watcher or even `watch(1)`, but I'm still not fond of it
-    being a requirement.
--   *[jam][jam]* / *[volo][volo]* do not require a build step to realize code changes.
+**NOTES**:
+
+-  N/A
 
 
 Registry free
 ------------------------------------------------------------
 
-There are several arguments for and against having a central registry.
-What it really boils down to is the potential for naming conflicts at
-scale.
-
-This is a real issue with NPM today; however, that doesn't mean it can't
-be [done well][packagist].
+The following table details which tools expose a central "registry".
 
 
- component    0 |  jam         0 |  volo        0
-:---------------|:---------------|:---------------
+  Registry?              |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  ?                      |  ✓                      |  ✗                      |  ✓                      |  ✗                      
 
-If we are going to have a registry, I think it should:
 
--   Enforce [user/package namespacing][packagist] at a minimum.
--   If it is a bottleneck, it is useless, so make it fast and always
-    available.
--   The registry shouldn't be the only way to obtain dependencies. In
-    most cases, I'd prefer to retrieve directly from git/github.
+**NOTES**:
 
-Currently, *[jam][jam]* is the only one with a registry; however, it
-currently suffers the same [issues as NPM](https://github.com/wilmoore/frontend-packagers/issues/1#issuecomment-8338583).
+-  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/twitter/bower/issues/10#issuecomment-8547463).
+-  It is good ettiquite is to use [user/package namespacing][packagist] when registering a package.
 
 
 Package installation sources
 ------------------------------------------------------------
 
-All of the package managers support git/github repositories as sources;
-however, *[jam][jam]* is the only one that doesn't currently seem to
-support git/github via the manifest (`package.json`) file.
+The following table details the method by which each tool is able to retrieve packages.
 
 
-  `source`     |  component ✓✓ |  jam        ✓ |  volo     ✓✓
-:--------------|:-------------:|:-------------:|:-------------:
- git/github    | yes           | cli only      | yes
- private repos | yes           | coming soon   | coming soon
- zip/tarball   | no            | cli only      | zipball only
- registry      | no            | yes           | no
+  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  git / github           |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
+  private repositories   |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
+  zip / tarball          |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+  registry               |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
-Module formats
+**NOTES**:
+
+-  N/A
+
+
+Supported JavaScript Module formats
 ------------------------------------------------------------
 
-
-  `format`          |  component   ✓ |  jam         ✓ |  volo      ✓✓
-:-------------------|:--------------:|:--------------:|:--------------:
- Node/CJS           |  yes (no wrap) |  yes (wrapped) |  yes (wrapped)
- AMD                |  no            |  yes           |  yes         
- Auto-Wrap Globals  |  no            |  no            |  yes         
+The following table details the JavaScript format each tool expects/handles.
 
 
+  Format                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  Global Script          |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  AMD                    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+  CommonJS/NodeJS        |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
+  CommonJS (WRAPPED)     |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
 
-Loader agnostic
+
+**NOTES**:
+
+There are several JavaScript formatting methodologies:
+
+
+-  Global Script
+
+         <script src="trim.js"></script>
+         <script>
+            var todo = new Todo({description: '', done: false});
+         </script>
+
+-  AMD
+
+         define(['todo'], function(Todo){
+            var todo = new Todo({description: '', done: false});
+         });
+
+-  CommonJS/NodeJS
+
+         var Todo = require('todo');
+         var todo = new Todo({description: '', done: false});
+
+-  CommonJS (wrapped in an AMD-style define)
+
+         define(function(require){
+            var Todo = require('todo');
+            var todo = new Todo({description: '', done: false});
+         });
+
+
+Module / Script Loader
 ------------------------------------------------------------
 
-*[volo][volo]* seems to be the the only loader agnostic package manager of
-the bunch. *[component][component]* ships with it's own `require` function
-and `build` command while *[jam][jam]* ships a custom version of
-[requirejs][requirejs].
+The following table details the module/script loader supported by each tool.
 
 
-  component   0 |  jam         0 |  volo      ✓✓✓
-:---------------|:---------------|:---------------
-  no            |  no            |  yes
+  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  Bring your own loader  |  ✓                      |  ✗                      |  ✗                      |  ✓                      
+  Includes a Loader      |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
 
 
-Packages include JavaScript, CSS, HTML
-------------------------------------------------------------
+**NOTES**:
 
-*[component][component]* seems to be the only of the bunch that makes
-CSS and HTML a prioroty along with JavaScript.
-
-
-  component ✓✓✓ |  jam         0 |  volo        0
-:---------------|:---------------|:---------------
-  yes           |  no            |  no      
-
-
-Summary
-------------------------------------------------------------
-
--   (18) [Volo][volo] ✓
--   (13) [Jam][jam]
--   (12) [Component][component]
-
-
-Final thoughts
-------------------------------------------------------------
-
-This comparision is very subjective. My personal tastes are just
-that...my personal tastes. I've spent a single day working with all
-three tools and I come away with feeling like I could totally use either
-*[jam][jam]* or *[volo][volo]* on a real project today.
-
-I think *[jam][jam]* has superior documentation and a little bit more
-traction; however, I feel like *[volo][volo]* is off to a great start
-and has the most potential (especially if it sticks to package
-management as a single concern).
-
-That being said, *[jam][jam]* could steal the show by doing the
-following:
-
--   Make [requirejs][requirejs] optional (although this is what I will
-    be using).
--   Support more than just JavaScript.
--   Support zip/tarballs and ad-hoc git repositories.
-
-
-Other tools you might consider
-------------------------------------------------------------
-
-Package Managers
-
--   [Tiki](http://sirtiki.com)
-
-Loaders
+Loaders that you might be interested in:
 
 -   [inject](https://github.com/linkedin/inject)
 -   [curl](https://github.com/cujojs/curl)
 -   [requirejs](http://requirejs.org)
 -   [cajon](https://github.com/requirejs/cajon)
 -   [almond](https://github.com/jrburke/almond)
+
+
+Package Contents
+------------------------------------------------------------
+
+The following table details the the types of source files that can be contained in each package per tool.
+
+
+  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  JavaScript             |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  HTML                   |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+  CSS                    |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+
+
+**NOTES**:
+
+-  N/A
+
+
+Final thoughts
+------------------------------------------------------------
+
+*[volo][volo]* is off to a great start as well; hopefully it sticks to package management as a single concern.
+
+*[jam][jam]* currently has the most traction; however, *[bower][bower]* seems to have generated more buzz than all of them in just under a week.  Of course, twitter and many [well-known developers](https://github.com/twitter/bower/graphs/contributors) being behind it certainly helped with that.
+
+*[jam][jam]* could steal the show by doing the following:
+
+-   Use *[bower][bower]* under the hood.
+-   Make the loader optional and allow loader plug-ins (i.e. [requirejs][requirejs]).
+-   Support zip/tarballs and ad-hoc git repositories via the manifest.
+
+Library and component authors, may want to consider using deploying behind a [UMD][umdjs] wrapper and support the various package managers by authoring both {component,package}.json for front-end and npm (where appropriate).
 
 
 Contributing
@@ -328,11 +339,22 @@ on more categories or if you feel a score is incorrect or outdated,
 please speak up or submit a pull request.
 
 
+Symbol Key
+------------------------------------------------------------
+
+✓
+✗
 
 
 
+
+
+
+
+[bower]:     http://twitter.github.com/bower/
 [component]: https://github.com/component/component
 [jam]:       http://jamjs.org
 [volo]:      http://volojs.org
 [requirejs]: http://requirejs.org/
 [packagist]: http://packagist.org/about
+[umdjs]:     https://github.com/umdjs/umd
