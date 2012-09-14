@@ -10,14 +10,15 @@ It is about time for front-end developers to have a decent package manager. Fron
 The contenders
 ------------------------------------------------------------
 
-First of all, there are other players in the game; however, these are ones that have caught my attention. If you feel I've left out a worthy contender, please let me know.
+First of all, there are other players in the game; however, the following have caught my attention:
 
 -   [bower][bower]
 -   [component][component]
 -   [jam][jam]
 -   [volo][volo]
 
-NOTES:
+
+**NOTES**:
 
 -  *[component][component]* is more of a concept and a framework for building and distributing front-end components. If you'd like to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
 -  *[bower][bower]* is meant to be consumed by higher-level tools and frameworks.
