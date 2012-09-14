@@ -7,6 +7,9 @@ Why do this?
 
 It is about time for front-end developers to have a decent package manager. Front-end development is [serious business](http://qr.ae/8aIrF) and there is no good reason for us to continue with sub-par tools or no tools at all.
 
+I appreciate the effort that has gone into all of these. It is awesome to see really talented developers taking on the task and sharing the result with the rest of us.
+
+
 The contenders
 ------------------------------------------------------------
 
@@ -22,8 +25,6 @@ First of all, there are other players in the game; however, the following have c
 
 -  *[component][component]* is more of a concept and a framework for building and distributing front-end components. If you'd like to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
 -  *[bower][bower]* is meant to be consumed by higher-level tools and frameworks.
-
-I appreciate the effort that has gone into all of these. It is awesome to see really talented developers taking on the task and sharing the result with the rest of us.
 
 
 What is a package manager?
