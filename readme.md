@@ -28,6 +28,7 @@ The following tools have caught my attention:
   -  **(1)** _bring your own CJS/AMD loader_.
   -  **(2)** _bring your own build tool_.
   -  **(3)** _bring your own organization conventions_.
+  -  **(4)** _ultimately, coupled with either [make][make] or [grunt][grunt] [bower][bower] looks like a viable option_
 
 
 What is a package manager?
@@ -361,3 +362,5 @@ Symbol Key
 [requirejs]: http://requirejs.org/
 [packagist]: http://packagist.org/about
 [umdjs]:     https://github.com/umdjs/umd
+[make]:      http://www.gnu.org/software/make/
+[grunt]:     http://gruntjs.com/
