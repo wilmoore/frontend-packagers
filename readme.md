@@ -25,10 +25,9 @@ The following tools have caught my attention:
 
 -  *[component][component]* is more of a concept and a framework for building and distributing front-end components. If you'd like to read more on this distinction, check out the [issue #1 thread](https://github.com/wilmoore/frontend-packagers/issues/1).
 -  *[bower][bower]* is meant to be consumed by higher-level tools and frameworks. What this means in practice is:
-
--  **(1)** _bring your own CJS/AMD loader_.
--  **(2)** _bring your own build tool_.
--  **(3)** _bring your own organization conventions_.
+  -  **(1)** _bring your own CJS/AMD loader_.
+  -  **(2)** _bring your own build tool_.
+  -  **(3)** _bring your own organization conventions_.
 
 
 What is a package manager?
