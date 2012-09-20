@@ -301,6 +301,7 @@ Loaders that you might be interested in:
 -   [requirejs](http://requirejs.org)
 -   [cajon](https://github.com/requirejs/cajon)
 -   [almond](https://github.com/jrburke/almond)
+-   [Shepherd-js](http://xcambar.github.com/shepherd-js/)
 
 
 Package Contents
