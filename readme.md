@@ -49,9 +49,9 @@ Configuration File
 The following table provides the name of the "manifest" file where you specify dependencies and/or the details of your package.
 
 
-  Configuration          |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Configuration          |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `filename`               |  component.json         |  component.json         |  package.json           |  package.json, volofile
+  `filename`             |  component.json         |  component.json         |  package.json           |  package.json, volofile
 
 
 Sample *[bower][bower]* enabled `component.json` file:
@@ -141,10 +141,10 @@ Package Installation Location
 The following table details where each tool stores downloaded packages.
 
  
-  Path                   |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `default path`           |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`            |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
+  `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
+  `custom path`          |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
 
 
 **NOTES**:
@@ -164,12 +164,12 @@ Responsibilities
 The following table details the responsibilities the given tool takes on.
 
 
-  Responsibilities       |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  Responsibilities         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+:--------------------------|:------------------------|:------------------------|:------------------------|:------------------------
  `package management`      |  ✓                      |  ✓                      |  ✓                      |  ✓                      
  `project scaffolding`     |  ✗                      |  ✗                      |  ✗                      |  ✓                     
  `build automation`        |  ✗                      |  ✗                      |  ✗                      |  ✓                      
- `script/module loading`   |  ✗                      |  ✗                      |  ✓                      |  ✓                      
+ `script/module loading`   |  ✗                      |  ✗                      |  ✓                      |  ✗                      
  `compile/build`           |  ✗                      |  ✓                      |  ✗                      |  ✗                      
 
 
@@ -184,9 +184,9 @@ Build/Compile
 The following table details which tools require a build/compile step during development.
 
 
-  Build/Compile?         |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Build/Compile?         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                       |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
+ `?`                     |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -200,9 +200,9 @@ Central Registry
 The following table details which tools expose a central "registry".
 
 
-  Registry?              |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                       |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+ `?`                     |  ✓                      |  ✗                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
@@ -217,12 +217,12 @@ Package installation sources
 The following table details the method by which each tool is able to retrieve packages.
 
 
-  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `git / github`            |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
- `private repositories`    |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
- `zip / tarball`           |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
- `registry`                |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+ `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
+ `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
+ `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+ `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -236,12 +236,12 @@ Supported JavaScript Module formats
 The following table details the JavaScript format each tool expects/handles.
 
 
-  Format                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Format                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Global Script`           |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `AMD`                     |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
- `CommonJS/NodeJS`         |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
- `CommonJS (WRAPPED)`      |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `Global Script`         |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `AMD`                   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+ `CommonJS/NodeJS`       |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
+ `CommonJS (WRAPPED)`    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
 
 
 **NOTES**:
@@ -286,10 +286,10 @@ Module / Script Loader
 The following table details the module/script loader supported by each tool.
 
 
-  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Bring your own loader`   |  ✓                      |  ✗                      |  ✗                      |  ✓                      
- `Includes a Loader`       |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
+ `Bring your own loader` |  ✓                      |  ✗                      |  ✗                      |  ✓                      
+ `Includes a Loader`     |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
 
 
 **NOTES**:
@@ -310,11 +310,11 @@ Package Contents
 The following table details the the types of source files that can be contained in each package per tool.
 
 
-  Source                 |  [bower][bower]                  |  [component][component]              |  [jam][jam]                    |  [volo][volo]
+  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `JavaScript`              |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `HTML`                    |  ✓                      |  ✓                      |  ✓                      |  ✗                      
- `CSS`                     |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+ `JavaScript`            |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+ `HTML`                  |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+ `CSS`                   |  ✓                      |  ✓                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
