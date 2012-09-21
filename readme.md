@@ -229,7 +229,7 @@ The following table details the method by which each tool is able to retrieve pa
 
 **NOTES**:
 
--  For every team that I've been a part of over the last five years, no support for `private repositories` would be a deal breaker. If you are on a team where this is true, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+-  I've never been on a serious team where no support for `private repositories` would be acceptable. If you are on a team this is important, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
 
 
 Speed
