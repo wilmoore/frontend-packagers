@@ -227,7 +227,7 @@ The following table details the method by which each tool is able to retrieve pa
 
 **NOTES**:
 
--  N/A
+-  For every team that I've been a part of over the last five years, no support for `private repositories` would be a deal breaker. If you are on a team where this is true, it seems that your best options are currently *[bower][bower]* and *[component][component]*
 
 
 Supported JavaScript Module formats
