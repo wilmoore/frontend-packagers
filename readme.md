@@ -240,13 +240,13 @@ The following table details the speed of each tool.
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `85 components`         |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
+ `~85 components`        |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
 
 
 **NOTES**:
 
 -  For most projects, speed won't be an issue; however, it may be more import for some.
--  These benchmarks were taken from the *[component][component]* documentation; thus depending on your setup and dependencies, YMMV.
+-  These benchmarks were taken from the *[component](https://github.com/component/component#features)* documentation; thus depending on your setup and dependencies, YMMV.
 
 
 Supported JavaScript Module formats
@@ -352,7 +352,7 @@ Final thoughts
 
 -   Use *[bower][bower]* under the hood.
 -   Make the loader optional and allow loader plug-ins (i.e. [requirejs][requirejs]).
--   Support zip/tarballs and ad-hoc git repositories via the manifest (but you get that for free by using *[bower][bower]*.
+-   Support zip/tarballs and especially git/private repositories via the manifest (but you get that for free by using *[bower][bower]*.
 
 Library and component authors, may want to consider using deploying behind a [UMD][umdjs] wrapper and support the various package managers by authoring both {component,package}.json for front-end and npm (where appropriate).
 
