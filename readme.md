@@ -222,12 +222,29 @@ The following table details the method by which each tool is able to retrieve pa
  `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
  `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
  `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+ `HTTP/HTTPS URL`        |  ✓                      |  ✗                      |  ✗                      |  ✗                      
  `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
 
--  For every team that I've been a part of over the last five years, no support for `private repositories` would be a deal breaker. If you are on a team where this is true, it seems that your best options are currently *[bower][bower]* and *[component][component]*
+-  For every team that I've been a part of over the last five years, no support for `private repositories` would be a deal breaker. If you are on a team where this is true, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+
+
+Speed
+------------------------------------------------------------
+
+The following table details the speed of each tool.
+
+
+  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+ `85 components`         |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
+
+
+**NOTES**:
+
+-  For most projects, speed won't be an issue; however, it may be more import for some.
 
 
 Supported JavaScript Module formats
