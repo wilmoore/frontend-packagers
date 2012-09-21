@@ -245,6 +245,7 @@ The following table details the speed of each tool.
 **NOTES**:
 
 -  For most projects, speed won't be an issue; however, it may be more import for some.
+-  These benchmarks were taken from the *[component][component]* documentation; thus depending on your setup and dependencies, YMMV.
 
 
 Supported JavaScript Module formats
