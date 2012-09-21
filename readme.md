@@ -223,6 +223,7 @@ The following table details the method by which each tool is able to retrieve pa
  `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
  `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
  `HTTP/HTTPS URL`        |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+ `NPM`                   |  ✓                      |  ✗                      |  ✗                      |  ✗                      
  `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
