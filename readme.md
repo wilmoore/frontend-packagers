@@ -349,26 +349,21 @@ The following table details the the types of source files that can be contained 
 Final thoughts
 ------------------------------------------------------------
 
-*[volo][volo]* is off to a great start; hopefully it sticks to package management as a single concern.
+Each package manager is built by talented, responsive, and friendly developers. Ultimately, to evaluate for your team, you will have to put a weight on each category per your needs.
 
-*[jam][jam]* currently has the most traction and a *very* [responsive and friendly author](https://twitter.com/caolan); however, *[bower][bower]* seems to have generated more buzz than all of them in just under a week. Of course, twitter and many [well-known developers](https://github.com/twitter/bower/graphs/contributors) being behind it certainly helped with that.
+Library and component authors may want to consider:
 
-*[jam][jam]* could steal the show by doing the following:
-
--   Use *[bower][bower]* under the hood.
--   Make the loader optional and allow loader plug-ins (i.e. [requirejs][requirejs]).
--   Support zip/tarballs and especially git/private repositories via the manifest (but you get that for free by using *[bower][bower]*.
-
-Library and component authors, may want to consider using deploying behind a [UMD][umdjs] wrapper and support the various package managers by authoring both {component,package}.json for front-end and npm (where appropriate).
+#   Using a [UMD][umdjs] wrapper.
+#   Authoring both a {component,package}.json for front-end and npm (where appropriate).
 
 
 Contributing
 ------------------------------------------------------------
 
-I am sure I've made a few gramatical and spelling errors. I've probably even made comparison errors in a few spots. Please feel free to contribute to this. If you feel I should be rating on more categories or if you feel a score is incorrect or outdated, please speak up or submit a pull request.
+I am sure I've made a few gramatical and spelling errors. I've probably even made comparison errors in a few spots. Please feel free to speak up or submit a pull request.
 
 
-Symbol Key
+Symbols Used
 ------------------------------------------------------------
 
 ✓
@@ -390,4 +385,3 @@ Symbol Key
 [make]:      http://www.gnu.org/software/make/
 [grunt]:     http://gruntjs.com/
 [bi18]:      https://github.com/twitter/bower/issues/18
-
