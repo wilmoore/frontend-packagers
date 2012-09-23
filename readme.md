@@ -144,7 +144,7 @@ The following table details where each tool stores downloaded packages.
   Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`          |  ✗  (SEE: [#18][bi18]   |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
+  `custom path`          |  ✗  (SEE: [#18][bi18])  |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
 
 
 **NOTES**:
