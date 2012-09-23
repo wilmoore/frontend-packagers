@@ -353,8 +353,8 @@ Each package manager is built by talented, responsive, and friendly developers. 
 
 Library and component authors may want to consider:
 
-#   Using a [UMD][umdjs] wrapper.
-#   Authoring both a {component,package}.json for front-end and npm (where appropriate).
+-   Using a [UMD][umdjs] wrapper.
+-   Authoring both a {component,package}.json for front-end and npm (where appropriate).
 
 
 Contributing
