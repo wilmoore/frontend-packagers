@@ -323,6 +323,11 @@ Loaders that you might be interested in:
 -   [Shepherd-js](http://xcambar.github.com/shepherd-js/)
 
 
+Loader Comparisons
+
+-   [Javascript loaders](owl.li/2skp29)
+
+
 Package Contents
 ------------------------------------------------------------
 
