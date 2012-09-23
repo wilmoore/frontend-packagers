@@ -349,7 +349,7 @@ The following table details the the types of source files that can be contained 
 Final thoughts
 ------------------------------------------------------------
 
-Each package manager is built by talented, responsive, and friendly developers. Ultimately, to evaluate for your team, you will have to put a weight on each category per your needs.
+Each package manager is built by talented, responsive, and friendly developers. Ultimately, to evaluate for your team, you will have to put a weight on each category and score per your needs.
 
 Library and component authors may want to consider:
 
