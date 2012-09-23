@@ -51,7 +51,7 @@ The following table provides the name of the "manifest" file where you specify d
 
   Configuration          |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `filename`             |  component.json         |  component.json         |  package.json           |  package.json, volofile
+  `filename`             |  component.json         |  component.json         |  package.json           |  package.json
 
 
 Sample *[bower][bower]* enabled `component.json` file:
@@ -144,7 +144,7 @@ The following table details where each tool stores downloaded packages.
   Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`          |  ✗                      |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
+  `custom path`          |  ✗  (SEE: ([#18][bi18]) |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
 
 
 **NOTES**:
@@ -325,7 +325,7 @@ Loaders that you might be interested in:
 
 Loader Comparisons
 
--   [Javascript loaders](owl.li/2skp29)
+-   [Javascript loaders](http://owl.li/2skp29)
 
 
 Package Contents
@@ -389,3 +389,5 @@ Symbol Key
 [umdjs]:     https://github.com/umdjs/umd
 [make]:      http://www.gnu.org/software/make/
 [grunt]:     http://gruntjs.com/
+[bi18]:      https://github.com/twitter/bower/issues/18
+
