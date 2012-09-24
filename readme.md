@@ -57,14 +57,29 @@ The following table provides the name of the "manifest" file where you specify d
 Sample *[bower][bower]* enabled `component.json` file:
 
     {
-
-      "name":     "myProject",
-      "version":  "1.0.0",
-      "main":     "./path/to/main.css",
+      "name": "project-name",
+      "version": "x.x.x",
+      "description": "A project description provided by the author",
+      "homepage": "https://github.com/author/repo",
+      "license" : "[PLEASE include a license URL if terms are included]",
+      "main": [
+        "./source.js",
+        "./source.min.js"
+      ],
       "dependencies": {
-        "jquery": "~1.7.2"
+        "jquery": "~x.x.x"
+      },
+      "keywords": [
+        "use",
+        "intelligent",
+        "keywords",
+        "for",
+        "search"
+      ],
+      "author": {
+        "name": "Tool Author",
+        "web": "http://website.com"
       }
-
     }
 
 
