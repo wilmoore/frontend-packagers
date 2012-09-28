@@ -235,7 +235,7 @@ The following table details the method by which each tool is able to retrieve pa
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
  `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
- `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✗ (COMING SOON)        
+ `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
  `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
  `HTTP/HTTPS URL`        |  ✓                      |  ✗                      |  ✗                      |  ✗                      
  `NPM`                   |  ✓                      |  ✗                      |  ✗                      |  ✗                      
