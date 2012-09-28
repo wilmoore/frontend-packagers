@@ -147,7 +147,7 @@ Sample *[volo][volo]* enabled `package.json` file:
 
 **NOTES**:
 
--  N/A
+-  *[bower][bower]* lacks the notion of `devDependencies`. This is not an issue with the package managers that support `package.json`. There is an interesting discussion regarding some of the [reasoning](https://github.com/twitter/bower/pull/62#issuecomment-8630878) [behind](https://github.com/twitter/bower/pull/62#issuecomment-8627442) *[bower][bower]* not supporting the well-known [package.json](https://github.com/twitter/bower/pull/62) format.
 
 
 Package Installation Location
@@ -244,7 +244,8 @@ The following table details the method by which each tool is able to retrieve pa
 
 **NOTES**:
 
--  I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+-   I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+-   While *[volo][volo]* doesn't actually claim to have explicit support for `private repositories`, you can achieve the notion of `private repositories` by providing a URL to a single JavaScript source file (github and github:enterprise allow you to link to a `raw` file) or you can specify a URL to a zipball. There are a few more tricks that you can choose from listed [here](https://github.com/volojs/volo/wiki/Library-best-practices).
 
 
 Speed
@@ -370,6 +371,7 @@ Library and component authors may want to consider:
 
 -   Using a [UMD][umdjs] wrapper.
 -   Authoring both a {component,package}.json for front-end and npm (where appropriate).
+-   Adhering to these [Library best practices](https://github.com/volojs/volo/wiki/Library-best-practices) or something similar.
 
 
 Contributing
