@@ -377,11 +377,6 @@ Loaders that you might be interested in:
 -   [Shepherd-js](http://xcambar.github.com/shepherd-js/)
 
 
-Loader Comparisons
-
--   [Javascript loaders](http://owl.li/2skp29)
-
-
 Package Contents
 ------------------------------------------------------------
 
@@ -410,6 +405,15 @@ Library and component authors may want to consider:
 -   Using a [UMD][umdjs] wrapper.
 -   Authoring both a {component,package}.json for front-end and npm (where appropriate).
 -   Adhering to these [Library best practices](https://github.com/volojs/volo/wiki/Library-best-practices) or something similar.
+
+
+Complementary Resources
+------------------------------------------------------------
+
+Below are a list of resources that will likely be useful to you if you found this comparison useful:
+
+-   [Landscaping With Front-end Tools](https://github.com/codylindley/frontend-tools)
+-   [Javascript loaders](http://owl.li/2skp29)
 
 
 Contributing
