@@ -198,7 +198,7 @@ If not defined in `package.json` it:
 Development Dependencies
 ------------------------------------------------------------
 
-The following table details the whether each tool allows specifying development dependencies.
+The following table details whether each tool allows specifying development dependencies.
 
 
   Development Dependencies |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
