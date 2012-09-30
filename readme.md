@@ -208,7 +208,7 @@ The following table details whether each tool allows specifying development depe
 
 **NOTES**:
 
--  Since *[jam][jam]* and *[volo][volo]* use `package.json`, this just works; however, *[jam][jam]* re-implments this functionality [here](https://github.com/component/component/commit/f01bf04c674cbd13dcef5a4fefdefdeed268344c).
+-  Since *[jam][jam]* and *[volo][volo]* use `package.json`, this just works; however, *[component][component]* re-implments this functionality [here](https://github.com/component/component/commit/f01bf04c674cbd13dcef5a4fefdefdeed268344c).
 
 
 Responsibilities
