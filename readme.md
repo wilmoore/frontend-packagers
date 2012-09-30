@@ -51,7 +51,7 @@ The following table provides the name of the "manifest" file where you specify d
 
   Configuration          |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `filename`             |  component.json         |  component.json         |  package.json           |  package.json
+  `filename`             |  component.json         |  component.json         |  [package.json][package]|  [package.json][package]
 
 
 Sample *[bower][bower]* enabled `component.json` file:
@@ -134,11 +134,30 @@ Sample *[volo][volo]* enabled `package.json` file:
 
     {
 
+      "name":            "csbp",
+      "version":         "0.0.1",
+      "description":     "A Non-Framework Client-Side JavaScript/HTML5 Project Boilerplate",
+
+      "dependencies": {
+      },
+
+      "devDependencies": {
+        "yeti":          "*",
+        "docco":         "*",
+        "jshint":        "*",
+        "chai":          "*",
+        "mocha":         "*",
+        "sinon":         "*"
+      },
+
+      "amd":  {},
+
       "volo": {
-        "dependencies": {
-          "jquery":     "github:jquery/jquery/1.8.1",
-          "underscore": "github:amdjs/underscore/1.3.3",
-          "backbone":   "github:documentcloud/backbone/0.9.2"
+        "baseUrl":       "src/js/lib",
+
+        "dependencies":  {
+          "page":        "github:visionmedia/page.js",
+          "requirejs":   "*"
         }
       }
 
@@ -148,6 +167,9 @@ Sample *[volo][volo]* enabled `package.json` file:
 **NOTES**:
 
 -  *[bower][bower]* lacks the notion of `devDependencies`. This is not an issue with the package managers that support `package.json`. There is an interesting discussion regarding some of the [reasoning](https://github.com/twitter/bower/pull/62#issuecomment-8630878) [behind](https://github.com/twitter/bower/pull/62#issuecomment-8627442) *[bower][bower]* not supporting the well-known [package.json](https://github.com/twitter/bower/pull/62) format.
+-   When using *[volo][volo]*, I would suggest using the flags:
+      -   `-nostamp`: mitigates the reformating of your `package.json` file
+      -   `skipexists`: skip existing dependencies without noisy warnings
 
 
 Package Installation Location
@@ -173,6 +195,22 @@ If not defined in `package.json` it:
 -   Otherwise, the current working directory is used
 
 
+Development Dependencies
+------------------------------------------------------------
+
+The following table details the whether each tool allows specifying development dependencies.
+
+
+  Development Dependencies |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+:--------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  `devDependencies`        |  ✗                      |  ✓                      |  ✓                      |  ✓                      
+
+
+**NOTES**:
+
+-  Since *[jam][jam]* and *[volo][volo]* use `package.json`, this just works; however, *[jam][jam]* re-implments this functionality [here](https://github.com/component/component/commit/f01bf04c674cbd13dcef5a4fefdefdeed268344c).
+
+
 Responsibilities
 ------------------------------------------------------------
 
@@ -181,11 +219,11 @@ The following table details the responsibilities the given tool takes on.
 
   Responsibilities         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :--------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `package management`      |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `project scaffolding`     |  ✗                      |  ✗                      |  ✗                      |  ✓                     
- `build automation`        |  ✗                      |  ✗                      |  ✗                      |  ✓                      
- `script/module loading`   |  ✗                      |  ✗                      |  ✓                      |  ✗                      
- `compile/build`           |  ✗                      |  ✓                      |  ✗                      |  ✗                      
+  `package management`     |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  `project scaffolding`    |  ✗                      |  ✗                      |  ✗                      |  ✓                     
+  `build automation`       |  ✗                      |  ✗                      |  ✗                      |  ✓                      
+  `script/module loading`  |  ✗                      |  ✗                      |  ✓                      |  ✗                      
+  `compile/build`          |  ✗                      |  ✓                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -201,7 +239,7 @@ The following table details which tools require a build/compile step during deve
 
   Build/Compile?         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                     |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
+  `?`                    |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -217,7 +255,7 @@ The following table details which tools expose a central "registry".
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `?`                     |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+  `?`                    |  ✓                      |  ✗                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
@@ -234,12 +272,12 @@ The following table details the method by which each tool is able to retrieve pa
 
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `git / github`          |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
- `private repositories`  |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
- `zip / tarball`         |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
- `HTTP/HTTPS URL`        |  ✓                      |  ✗                      |  ✗                      |  ✗                      
- `NPM`                   |  ✓                      |  ✗                      |  ✗                      |  ✗                      
- `registry`              |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+  `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
+  `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
+  `zip / tarball`        |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+  `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+  `NPM`                  |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+  `registry`             |  ✓                      |  ✗                      |  ✗                      |  ✗                      
 
 
 **NOTES**:
@@ -256,7 +294,7 @@ The following table details the speed of each tool.
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `~85 components`        |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
+  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
 
 
 **NOTES**:
@@ -273,10 +311,10 @@ The following table details the JavaScript format each tool expects/handles.
 
   Format                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Global Script`         |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `AMD`                   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
- `CommonJS/NodeJS`       |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
- `CommonJS (WRAPPED)`    |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+  `Global Script`        |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  `AMD`                  |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+  `CommonJS/NodeJS`      |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
+  `CommonJS (WRAPPED)`   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
 
 
 **NOTES**:
@@ -323,8 +361,8 @@ The following table details the module/script loader supported by each tool.
 
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `Bring your own loader` |  ✓                      |  ✗                      |  ✗                      |  ✓                      
- `Includes a Loader`     |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
+  `Bring your own loader`|  ✓                      |  ✗                      |  ✗                      |  ✓                      
+  `Includes a Loader`    |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
 
 
 **NOTES**:
@@ -352,9 +390,9 @@ The following table details the the types of source files that can be contained 
 
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
- `JavaScript`            |  ✓                      |  ✓                      |  ✓                      |  ✓                      
- `HTML`                  |  ✓                      |  ✓                      |  ✓                      |  ✗                      
- `CSS`                   |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+  `JavaScript`           |  ✓                      |  ✓                      |  ✓                      |  ✓                      
+  `HTML`                 |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+  `CSS`                  |  ✓                      |  ✓                      |  ✓                      |  ✗                      
 
 
 **NOTES**:
@@ -402,3 +440,4 @@ Symbols Used
 [make]:      http://www.gnu.org/software/make/
 [grunt]:     http://gruntjs.com/
 [bi18]:      https://github.com/twitter/bower/issues/18
+[package]:   http://package.json.jit.su
