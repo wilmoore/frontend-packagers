@@ -181,7 +181,7 @@ The following table details where each tool stores downloaded packages.
   Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`          |  ✗  (SEE: [#18][bi18])  |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
+  `custom path`          |  [.bowerrc][bowerrc]    |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
 
 
 **NOTES**:
@@ -274,7 +274,7 @@ The following table details the method by which each tool is able to retrieve pa
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
   `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
-  `zip / tarball`        |  ✗                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
+  `zip / tarball`        |  ✓                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
   `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      
   `NPM`                  |  ✓                      |  ✗                      |  ✗                      |  ✗                      
   `registry`             |  ✓                      |  ✗                      |  ✗                      |  ✗                      
@@ -445,3 +445,4 @@ Symbols Used
 [grunt]:     http://gruntjs.com/
 [bi18]:      https://github.com/twitter/bower/issues/18
 [package]:   http://package.json.jit.su
+[bowerrc]:   https://github.com/twitter/bower#bower-configuration
