@@ -274,6 +274,7 @@ The following table details the method by which each tool is able to retrieve pa
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
   `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
+  `local repositories`   |  ✓                      |  ✓                      |  ✗                      |  ✗
   `zip / tarball`        |  ✓                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
   `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      
   `NPM`                  |  ✓                      |  ✗                      |  ✗                      |  ✗                      
