@@ -10,6 +10,15 @@ It is about time for front-end developers to have a decent package manager. Fron
 I appreciate the effort that has gone into all of these. It is awesome to see really talented developers taking on the task and sharing the result with the rest of us.
 
 
+Who are you?
+------------------------------------------------------------
+
+- I am a full-stack software developer
+- I love what I do
+- I love sharing what I've learned
+- Hit me up at [@wilmoore][@wilmoore], [@github][@github], and [@linkedin][@linkedin]
+
+
 The contenders
 ------------------------------------------------------------
 
@@ -448,3 +457,7 @@ Symbols Used
 [bi18]:      https://github.com/twitter/bower/issues/18
 [package]:   http://package.json.jit.su
 [bowerrc]:   https://github.com/twitter/bower#bower-configuration
+
+[@wilmoore]: http://twitter.com/wilmoore
+[@github]:   http://github.com/wilmoore
+[@linkedin]: http://www.linkedin.com/in/wilmoore
