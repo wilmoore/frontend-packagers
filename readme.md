@@ -414,6 +414,7 @@ Complementary Resources
 Below are a list of resources that will likely be useful to you if you found this comparison useful:
 
 -   [Landscaping With Front-end Tools](https://github.com/codylindley/frontend-tools)
+-   [The State of Javascript Package Management](http://wibblycode.wordpress.com/2013/01/01/the-state-of-javascript-package-management/)
 -   [Javascript loaders](http://owl.li/2skp29)
 
 
