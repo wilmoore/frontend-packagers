@@ -28,6 +28,7 @@ The following tools have caught my attention:
 -   [component][component]
 -   [jam][jam]
 -   [volo][volo]
+-   [npm][npm]
 
 
 **NOTES**:
@@ -58,9 +59,9 @@ Configuration File
 The following table provides the name of the "manifest" file where you specify dependencies and/or the details of your package.
 
 
-  Configuration          |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `filename`             |  component.json         |  component.json         |  [package.json][package]|  [package.json][package]
+  Configuration          |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:
+  `filename`             |  component.json         |  component.json         |  [package.json][package]|  [package.json][package]|  [package.json][package]
 
 
 Sample *[bower][bower]* enabled `component.json` file:
@@ -172,6 +173,43 @@ Sample *[volo][volo]* enabled `package.json` file:
 
     }
 
+Sample *[npm][npm]* enabled `package.json` file:
+
+    {
+      "name": "{{project}}",
+      "version": "0.1.0",
+      "description": "{{description}}",
+      "keywords": [],
+      "author": "{{name}} <{{email}}>",
+      "repository": "git://github.com/{{author}}/{{project}}.git",
+      "main": "index",
+      "homepage": "https://github.com/{{author}}/{{project}}",
+      "contributors": [
+        {
+          "name": "{{name}}"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/{{author}}/{{project}}/issues",
+        "email": "{{email}}"
+      },
+      "dependencies": {
+      },
+      "devDependencies": {
+        "tape": "~0.2.2",
+        "browserify": "~1.17.3",
+        "testem": "~0.2.56"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/{{author}}/{{project}}/raw/master/LICENSE"
+        }
+      ],
+      "scripts": {
+        "test": "testem"
+      }
+    }
 
 **NOTES**:
 
@@ -187,10 +225,10 @@ Package Installation Location
 The following table details where each tool stores downloaded packages.
 
  
-  Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./
-  `custom path`          |  [.bowerrc][bowerrc]    |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir
+  Path                   |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:
+  `default path`         |  ./components           |  ./components           |  ./jam                  |  ./js, ./scripts, ./    |  ./node_modules
+  `custom path`          |  [.bowerrc][bowerrc]    |  --out dir              |  jam.packageDir         |  volo.{baseDir,baseUrl}, amd.baseDir  |  no
 
 
 **NOTES**:
@@ -210,9 +248,9 @@ Development Dependencies
 The following table details whether each tool allows specifying development dependencies.
 
 
-  Development Dependencies |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:--------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `devDependencies`        |  ✗                      |  ✓                      |  ✓                      |  ✓                      
+  Development Dependencies |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
+:--------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
+  `devDependencies`        |  ✗                      |  ✓                      |  ✓                      |  ✓                      |  ✓
 
 
 **NOTES**:
@@ -226,19 +264,20 @@ Responsibilities
 The following table details the responsibilities the given tool takes on.
 
 
-  Responsibilities         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+  Responsibilities         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
 :--------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `package management`     |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  `project scaffolding`    |  ✗                      |  ✗                      |  ✗                      |  ✓                     
-  `build automation`       |  ✗                      |  ✗                      |  ✗                      |  ✓                      
-  `script/module loading`  |  ✗                      |  ✗                      |  ✓                      |  ✗                      
-  `compile/build`          |  ✗                      |  ✓                      |  ✗                      |  ✗                      
+  `package management`     |  ✓                      |  ✓                      |  ✓                      |  ✓                      |  ✓
+  `project scaffolding`    |  ✗                      |  ✗                      |  ✗                      |  ✓                      |  ✓
+  `build automation`       |  ✗                      |  ✗                      |  ✗                      |  ✓                      |  ✗
+  `script/module loading`  |  ✗                      |  ✗                      |  ✓                      |  ✗                      |  ✗
+  `compile/build`          |  ✗                      |  ✓                      |  ✗                      |  ✗                      |  ✗
 
 
 **NOTES**:
 
 -  An interesting comparison of [volo and grunt](https://github.com/volojs/volo/wiki/volo-and-grunt).
-
+-  [npm][npm] has compile/build support in form of .gyp scripts and has build
+  automation in the form of `npm prepublish` scripts.
 
 Build/Compile
 ------------------------------------------------------------
@@ -248,12 +287,14 @@ The following table details which tools require a build/compile step during deve
 
   Build/Compile?         |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `?`                    |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      
+  `?`                    |  ✗                      |  ✓ (component build)    |  ✗                      |  ✗                      |  ✓
 
 
 **NOTES**:
 
 -  N/A
+- [npm][npm] generally contains commonJS packages which require some form of 
+  compilation to work in the browser, whether that's done on the CLI or dynamically in the browser.
 
 
 Central Registry
@@ -262,15 +303,17 @@ Central Registry
 The following table details which tools expose a central "registry".
 
 
-  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `?`                    |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]          |  [npm][npm]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:
+  `?`                    |  ✓                      |  ✗                      |  ✓                      |  ✗                      |  ✓
 
 
 **NOTES**:
 
 -  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/twitter/bower/issues/10#issuecomment-8547463).
 -  It is good ettiquite is to use [user/package namespacing][packagist] when registering a package.
+-  [npm][npm] enforces a global namespace if you want modules published in the
+  public registry.
 
 
 Package installation sources
@@ -279,20 +322,20 @@ Package installation sources
 The following table details the method by which each tool is able to retrieve packages.
 
 
-  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
-  `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
-  `local repositories`   |  ✓                      |  ✓                      |  ✗                      |  ✗
-  `zip / tarball`        |  ✓                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
-  `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      
-  `NPM`                  |  ✓                      |  ✗                      |  ✗                      |  ✗                      
-  `registry`             |  ✓                      |  ✗                      |  ✗                      |  ✗                      
+  `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      |  ✓
+  `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)    |  ✓
+  `local repositories`   |  ✓                      |  ✓                      |  ✗                      |  ✗                      |  ✓
+  `zip / tarball`        |  ✓                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       |  ✓
+  `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      |  ✓
+  `NPM`                  |  ✓                      |  ✗                      |  ✗                      |  ✗                      |  ✓
+  `registry`             |  ✓                      |  ✗                      |  ✗                      |  ✗                      |  ✓
 
 
 **NOTES**:
 
--   I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+-   I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]*, *[component][component]* or *[npm][npm]*.
 -   While *[volo][volo]* doesn't actually claim to have explicit support for `private repositories`, you can achieve the notion of `private repositories` by providing a URL to a single JavaScript source file (github and github:enterprise allow you to link to a `raw` file) or you can specify a URL to a zipball. There are a few more tricks that you can choose from listed [here](https://github.com/volojs/volo/wiki/Library-best-practices).
 
 
@@ -302,9 +345,9 @@ Speed
 The following table details the speed of each tool.
 
 
-  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   
+  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s                   | ~40s
 
 
 **NOTES**:
@@ -319,12 +362,12 @@ Supported JavaScript Module formats
 The following table details the JavaScript format each tool expects/handles.
 
 
-  Format                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `Global Script`        |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  `AMD`                  |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
-  `CommonJS/NodeJS`      |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
-  `CommonJS (WRAPPED)`   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+  Format                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:
+  `Global Script`        |  ✓                      |  ✓                      |  ✓                      |  ✓                      |  ✓ (format agnostic)
+  `AMD`                  |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      |  ✓ (format agnostic)
+  `CommonJS/NodeJS`      |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      |  ✓ (format agnostic)
+  `CommonJS (WRAPPED)`   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      |  ✓ (format agnostic)
 
 
 **NOTES**:
@@ -361,6 +404,10 @@ There are several JavaScript formatting methodologies:
 **NOTES**:
 
 -  N/A
+- `npm` just installs modules and doesn't care about your format. however the
+  vast majority of modules in `npm` are commonJS and you will get the most out
+  of npm if you use commonJS. Especially since the commonJS algorithm knows how
+  to look into the node_modules folder
 
 
 Module / Script Loader
@@ -369,10 +416,10 @@ Module / Script Loader
 The following table details the module/script loader supported by each tool.
 
 
-  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
+  Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]           |  [npm][npm]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `Bring your own loader`|  ✓                      |  ✗                      |  ✗                      |  ✓                      
-  `Includes a Loader`    |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      
+  `Bring your own loader`|  ✓                      |  ✗                      |  ✗                      |  ✓                      |  ✓ 
+  `Includes a Loader`    |  ✗                      |  ✓ (custom require)     |  ✓ (RequireJS)          |  ✗                      |  ✗
 
 
 **NOTES**:
@@ -385,7 +432,7 @@ Loaders that you might be interested in:
 -   [cajon](https://github.com/requirejs/cajon)
 -   [almond](https://github.com/jrburke/almond)
 -   [Shepherd-js](http://xcambar.github.com/shepherd-js/)
-
+-   [browserify](https://github.com/substack/node-browserify)
 
 Package Contents
 ------------------------------------------------------------
@@ -394,10 +441,10 @@ The following table details the the types of source files that can be contained 
 
 
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
-:------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `JavaScript`           |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  `HTML`                 |  ✓                      |  ✓                      |  ✓                      |  ✗                      
-  `CSS`                  |  ✓                      |  ✓                      |  ✓                      |  ✗                      
+:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:------------------------|:
+  `JavaScript`           |  ✓                      |  ✓                      |  ✓                      |  ✓                      |  ✓ (anything, even Java)
+  `HTML`                 |  ✓                      |  ✓                      |  ✓                      |  ✗                      |  ✓ (anything, even Java)
+  `CSS`                  |  ✓                      |  ✓                      |  ✓                      |  ✗                      |  ✓ (anything, even Java)
 
 
 **NOTES**:
@@ -415,7 +462,7 @@ Library and component authors may want to consider:
 -   Using a [UMD][umdjs] wrapper.
 -   Authoring both a {component,package}.json for front-end and npm (where appropriate).
 -   Adhering to these [Library best practices](https://github.com/volojs/volo/wiki/Library-best-practices) or something similar.
-
+-   Publishing isomorphic JavaScript to npm for usage in any JavaScript environment
 
 Complementary Resources
 ------------------------------------------------------------
@@ -425,7 +472,7 @@ Below are a list of resources that will likely be useful to you if you found thi
 -   [Landscaping With Front-end Tools](https://github.com/codylindley/frontend-tools)
 -   [The State of Javascript Package Management](http://wibblycode.wordpress.com/2013/01/01/the-state-of-javascript-package-management/)
 -   [Javascript loaders](http://owl.li/2skp29)
-
+-   [Building small modules](http://codeofrob.com/entries/lots-of-small-things.html)
 
 Contributing
 ------------------------------------------------------------
@@ -457,6 +504,7 @@ Symbols Used
 [bi18]:      https://github.com/twitter/bower/issues/18
 [package]:   http://package.json.jit.su
 [bowerrc]:   https://github.com/twitter/bower#bower-configuration
+[npm]:       https://npmjs.org/
 
 [@wilmoore]: http://twitter.com/wilmoore
 [@github]:   http://github.com/wilmoore
