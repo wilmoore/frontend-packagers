@@ -282,7 +282,7 @@ The following table details the method by which each tool is able to retrieve pa
   Source                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
   `git / github`         |  ✓                      |  ✓                      |  ✓ (CLI ONLY)           |  ✓                      
-  `private repositories` |  ✓                      |  ✓                      |  ✗ (COMING SOON)        |  ✓ (SEE NOTES BELOW)
+  `private repositories` |  ✓                      |  ✓                      |  ✓                      |  ✓ (SEE NOTES BELOW)
   `local repositories`   |  ✓                      |  ✓                      |  ✗                      |  ✗
   `zip / tarball`        |  ✓                      |  ✗                      |  ✓ (CLI ONLY)           |  ✓ (ZIPBALL ONLY)       
   `HTTP/HTTPS URL`       |  ✓                      |  ✗                      |  ✗                      |  ✗                      
@@ -292,7 +292,7 @@ The following table details the method by which each tool is able to retrieve pa
 
 **NOTES**:
 
--   I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]* and *[component][component]*.
+-   I've never been on a serious team where no support for `private repositories` would be acceptable. If this is important to you, it seems that your best options are currently *[bower][bower]*, *[component][component]* and *[jam][jam]*.
 -   While *[volo][volo]* doesn't actually claim to have explicit support for `private repositories`, you can achieve the notion of `private repositories` by providing a URL to a single JavaScript source file (github and github:enterprise allow you to link to a `raw` file) or you can specify a URL to a zipball. There are a few more tricks that you can choose from listed [here](https://github.com/volojs/volo/wiki/Library-best-practices).
 
 
