@@ -270,7 +270,7 @@ The following table details which tools expose a central "registry".
 **NOTES**:
 
 -  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/twitter/bower/issues/10#issuecomment-8547463).
--  It is good ettiquite is to use [user/package namespacing][packagist] when registering a package.
+-  It is good etiquette to use [user/package namespacing][packagist] when registering a package.
 
 
 Package installation sources
@@ -334,7 +334,7 @@ There are several JavaScript formatting methodologies:
 
 -  Global Script
 
-         <script src="trim.js"></script>
+         <script src="todo.js"></script>
          <script>
             var todo = new Todo({description: '', done: false});
          </script>
