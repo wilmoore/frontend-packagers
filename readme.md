@@ -264,7 +264,7 @@ The following table details which tools expose a central "registry".
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `?`                    |  [✓][bower-com]         |  [✓][component-com]     |  [✓] [jam-com]         |  ✗                      
+  `?`                    |  [✓][bower-reg]         |  [✓][component-reg]     |  [✓] [jam-reg]         |  ✗                      
 
 
 **NOTES**:
