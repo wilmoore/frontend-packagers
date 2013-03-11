@@ -264,7 +264,7 @@ The following table details which tools expose a central "registry".
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `?`                    |  ✓                      |  ✗                      |  ✓                      |  ✗                      
+  `?`                    |  [✓][bower-com]         |  [✓][component-com]     |  [✓] [jam-com]         |  ✗                      
 
 
 **NOTES**:
@@ -448,19 +448,23 @@ Symbols Used
 
 
 
-[bower]:     http://twitter.github.com/bower/
-[component]: https://github.com/component/component
-[jam]:       http://jamjs.org
-[volo]:      http://volojs.org
-[requirejs]: http://requirejs.org/
-[packagist]: http://packagist.org/about
-[umdjs]:     https://github.com/umdjs/umd
-[make]:      http://www.gnu.org/software/make/
-[grunt]:     http://gruntjs.com/
-[bi18]:      https://github.com/twitter/bower/issues/18
-[package]:   http://package.json.jit.su
-[bowerrc]:   https://github.com/twitter/bower#bower-configuration
+[bower]:         http://twitter.github.com/bower/
+[component]:     https://github.com/component/component
+[jam]:           http://jamjs.org
+[volo]:          http://volojs.org
+[requirejs]:     http://requirejs.org/
+[packagist]:     http://packagist.org/about
+[umdjs]:         https://github.com/umdjs/umd
+[make]:          http://www.gnu.org/software/make/
+[grunt]:         http://gruntjs.com/
+[bi18]:          https://github.com/twitter/bower/issues/18
+[package]:       http://package.json.jit.su
+[bowerrc]:       https://github.com/twitter/bower#bower-configuration
 
-[@wilmoore]: http://twitter.com/wilmoore
-[@github]:   http://github.com/wilmoore
-[@linkedin]: http://www.linkedin.com/in/wilmoore
+[bower-reg]:     http://sindresorhus.com/bower-components
+[component-reg]: http://component.io
+[jam-reg]:       http://jamjs.org/packages
+
+[@wilmoore]:     http://twitter.com/wilmoore
+[@github]:       http://github.com/wilmoore
+[@linkedin]:     http://www.linkedin.com/in/wilmoore
