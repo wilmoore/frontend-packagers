@@ -321,10 +321,10 @@ The following table details the JavaScript format each tool expects/handles.
 
   Format                 |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo]
 :------------------------|:------------------------|:------------------------|:------------------------|:------------------------
-  `Global Script`        |  ✓                      |  ✓                      |  ✓                      |  ✓                      
-  `AMD`                  |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
-  `CommonJS/NodeJS`      |  ✓ (format agnostic)    |  ✓ (bundles require)    |  ✗                      |  ✗                      
-  `CommonJS (WRAPPED)`   |  ✓ (format agnostic)    |  ✗                      |  ✓                      |  ✓                      
+  `Global Script`        |  ✓                      |  ✓ (`--standalone`)     |  ✓                      |  ✓                      
+  `AMD`                  |  ✓ (format agnostic)    |  ✓ (`--standalone`)     |  ✓                      |  ✓                      
+  `CommonJS/NodeJS`      |  ✓ (format agnostic)    |  ✓ (uses CJS style)     |  ✗                      |  ✗                      
+  `CommonJS (WRAPPED)`   |  ✓ (format agnostic)    |  ✓ (`--standalone`)     |  ✓                      |  ✓                      
 
 
 **NOTES**:
