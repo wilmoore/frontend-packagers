@@ -325,7 +325,7 @@ The following table details the speed of each tool.
 
   Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo] | [npm][npm]
 :------------------------|:------------------------|:------------------------|:------------------------|:--------------|:-----------
-  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s         |  untested
+  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s         |  ~40s
 
 
 **NOTES**:
