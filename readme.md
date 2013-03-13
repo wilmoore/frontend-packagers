@@ -211,7 +211,7 @@ The following table details where each tool stores downloaded packages.
  Path           | [bower][bower]      | [component][component] | [jam][jam]     | [volo][volo]                        | [npm][npm] + [browserify][browserify]
 :---------------|:--------------------|:-----------------------|:---------------|:------------------------------------|:---------------
  `default path` | ./components        | ./components           | ./jam          | ./js, ./scripts, ./                 | ./node_modules
- `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | no
+ `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | ✗
 
 
 **NOTES**:
