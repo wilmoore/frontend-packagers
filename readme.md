@@ -425,7 +425,7 @@ The following table details the the types of source files that can be contained 
 **NOTES**:
 
 - [npm][npm] lets you install any arbitrary files (much like bower) so you could bring your own loader for CSS and HTML.
-
+- [browserify][] can facilitate loading static assets via [brfs][] which analyzes the AST for fs.readFileSync() calls and inlines file contents.
 
 Final thoughts
 ------------------------------------------------------------
@@ -475,6 +475,7 @@ Symbols Used
 [volo]:          http://volojs.org
 [npm]:           https://npmjs.org/
 [browserify]:    http://browserify.org/
+[brfs]:          https://github.com/substack/brfs
 [requirejs]:     http://requirejs.org/
 [packagist]:     http://packagist.org/about
 [umdjs]:         https://github.com/umdjs/umd
