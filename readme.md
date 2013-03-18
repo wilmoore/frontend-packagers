@@ -425,7 +425,7 @@ The following table details the the types of source files that can be contained 
 **NOTES**:
 
 - [npm][npm] lets you install any arbitrary files (much like bower) so you could bring your own loader for CSS and HTML.
-- [browserify][] can facilitate loading static assets via [brfs][] which analyzes the AST for fs.readFileSync() calls and inlines file contents.
+- [browserify][] can facilitate loading static assets via [brfs][] which analyzes the AST for fs.readFileSync() calls and inlines file contents. See comment by [@substack](https://github.com/wilmoore/frontend-packagers/commit/3b9fcb105bc4e8697f65aac36971a1fb1867b49d#commitcomment-2829487) for more details.
 
 Final thoughts
 ------------------------------------------------------------
