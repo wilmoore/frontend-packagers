@@ -447,6 +447,8 @@ Below are a list of resources that will likely be useful to you if you found thi
 -   [Package Managers: An Introductory Guide For The Uninitiated Front-End Developer](http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer)
 -   [Browser field spec for package.json](https://gist.github.com/shtylman/4339901)
 -   [Landscaping With Front-end Tools](https://github.com/codylindley/frontend-tools)
+-   [A novel, efficient approach to JavaScript loading](http://youtu.be/mGENRKrdoGY)
+-   [Confused About Components](http://dailyjs.com/2013/01/28/components/)
 -   [Web Platform Tools](http://webplatformtools.org/)
 -   [JavaScript: Noteworthy Tools & Libraries](http://jamesonjavascript.wordpress.com/2012/11/27/javascript-noteworthy-tools-libraries/)
 -   [The State of Javascript Package Management](http://wibblycode.wordpress.com/2013/01/01/the-state-of-javascript-package-management/)
