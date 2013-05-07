@@ -474,7 +474,7 @@ Symbols Used
 
 
 
-[bower]:         http://twitter.github.com/bower/
+[bower]:         http://bower.io
 [component]:     https://github.com/component/component
 [jam]:           http://jamjs.org
 [volo]:          http://volojs.org
