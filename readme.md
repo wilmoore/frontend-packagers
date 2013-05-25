@@ -250,6 +250,7 @@ The following table details the responsibilities the given tool takes on.
  Responsibilities        |  [bower][bower] | [component][component] | [jam][jam] |  [volo][volo] | [npm][npm] + [browserify][browserify]
 :------------------------|:----------------|:-----------------------|:-----------|:--------------|:--------------------------------------
  `package management`    |  ✓              | ✓                      | ✓          |  ✓            | ✓ (npm)
+ `project bootstrapping` |  ✗              | ✓                      | ✗          |  ✓            | ✓ 
  `project scaffolding`   |  ✗              | ✗                      | ✗          |  ✓            | ✗
  `build automation`      |  ✗              | ✗                      | ✗          |  ✓            | ✗
  `script/module loading` |  ✗              | ✗                      | ✓          |  ✗            | ✗
@@ -258,6 +259,8 @@ The following table details the responsibilities the given tool takes on.
 
 **NOTES**:
 
+-  Project _bootstrapping_ (i.e. `component create mycomponent`) is generally very minimal.
+-  Project _scaffolding_ (i.e. `volo create username/template-repo`) can be a bit more involved.
 -  An interesting comparison of [volo and grunt](https://github.com/volojs/volo/wiki/volo-and-grunt).
 
 
