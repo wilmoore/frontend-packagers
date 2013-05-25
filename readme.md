@@ -61,34 +61,26 @@ The following table provides the name of the "manifest" file where you specify d
 
  Configuration | [bower][bower] | [component][component] | [jam][jam]              | [volo][volo]            | [npm][npm]
 :--------------|:---------------|:-----------------------|:------------------------|:------------------------|:--------
- `filename`    | component.json | component.json         | [package.json][package] | [package.json][package] | [package.json][package]
+ `filename`    | bower.json     | component.json         | [package.json][package] | [package.json][package] | [package.json][package]
 
 
-Sample *[bower][bower]* enabled `component.json` file:
+Sample *[bower][bower]* enabled `bower.json` file:
 
     {
-      "name": "project-name",
-      "version": "x.x.x",
-      "description": "A project description provided by the author",
-      "homepage": "https://github.com/author/repo",
-      "license" : "[PLEASE include a license URL if terms are included]",
-      "main": [
-        "./source.js",
-        "./source.min.js"
+      "name": "my-project",
+      "version": "1.0.0",
+      "main": "path/to/main.css",
+      "ignore": [
+        ".jshintrc",
+        "**/*.txt"
       ],
       "dependencies": {
-        "jquery": "~x.x.x"
+        "<name>": "<version>",
+        "<name>": "<folder>",
+        "<name>": "<package>"
       },
-      "keywords": [
-        "use",
-        "intelligent",
-        "keywords",
-        "for",
-        "search"
-      ],
-      "author": {
-        "name": "Tool Author",
-        "web": "http://website.com"
+      "devDependencies": {
+        "<test-framework-name>": "<version>"
       }
     }
 
@@ -195,7 +187,7 @@ Sample *[npm][npm] + [browserify][browserify]* enabled `package.json` file:
 
 **NOTES**:
 
--  *[bower][bower]* lacks the notion of `devDependencies`. This is not an issue with the package managers that support `package.json`. There is an interesting discussion regarding some of the [reasoning](https://github.com/twitter/bower/pull/62#issuecomment-8630878) [behind](https://github.com/twitter/bower/pull/62#issuecomment-8627442) *[bower][bower]* not supporting the well-known [package.json](https://github.com/twitter/bower/pull/62) format.
+-   There is an interesting discussion regarding some of the [reasoning](https://github.com/bower/bower/pull/62#issuecomment-8630878) [behind](https://github.com/bower/bower/pull/62#issuecomment-8627442) *[bower][bower]* not supporting the well-known [package.json](https://github.com/bower/bower/pull/62) format.
 -   When using *[volo][volo]*, I would suggest using the flags:
       -   `-nostamp`: mitigates the reformating of your `package.json` file
       -   `skipexists`: skip existing dependencies without noisy warnings
@@ -233,7 +225,7 @@ The following table details whether each tool allows specifying development depe
 
  Development Dependencies | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
 :-------------------------|:---------------|:-----------------------|:-----------|:-------------|:-----------
- `devDependencies`        | ✗              | ✓                      | ✓          | ✓            | ✓
+ `devDependencies`        | ✓              | ✓                      | ✓          | ✓            | ✓
 
 
 **NOTES**:
@@ -293,7 +285,7 @@ The following table details which tools expose a central "registry".
 
 **NOTES**:
 
--  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/twitter/bower/issues/10#issuecomment-8547463).
+-  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/bower/bower/issues/10#issuecomment-8547463).
 -  It is good etiquette to use [user/package namespacing][packagist] when registering a package (except in npm)
 
 
@@ -489,9 +481,9 @@ Symbols Used
 [umdjs]:         https://github.com/umdjs/umd
 [make]:          http://www.gnu.org/software/make/
 [grunt]:         http://gruntjs.com/
-[bi18]:          https://github.com/twitter/bower/issues/18
+[bi18]:          https://github.com/bower/bower/issues/18
 [package]:       http://package.json.jit.su
-[bowerrc]:       https://github.com/twitter/bower#bower-configuration
+[bowerrc]:       https://github.com/bower/bower#configuration
 
 [bower-reg]:     http://sindresorhus.com/bower-components
 [component-reg]: http://component.io
