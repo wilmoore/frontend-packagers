@@ -292,7 +292,7 @@ The following table details which tools expose a central "registry".
 Package installation sources
 ------------------------------------------------------------
 
-The following table details the method by which each tool is able to retrieve packages.
+The following table details the method by which each tool allows you to specify each dependency (i.e. `dependencies`).
 
 
  Source                 | [bower][bower] | [component][component] | [jam][jam]   | [volo][volo]        | [npm][npm] + [browserify][browserify]
