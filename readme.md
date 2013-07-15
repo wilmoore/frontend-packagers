@@ -63,127 +63,133 @@ The following table provides the name of the "manifest" file where you specify d
 :--------------|:---------------|:-----------------------|:------------------------|:------------------------|:--------
  `filename`    | bower.json     | component.json         | [package.json][package] | [package.json][package] | [package.json][package]
 
-
 Sample *[bower][bower]* enabled `bower.json` file:
 
-    {
-      "name": "my-project",
-      "version": "1.0.0",
-      "main": "path/to/main.css",
-      "ignore": [
-        ".jshintrc",
-        "**/*.txt"
-      ],
-      "dependencies": {
-        "<name>": "<version>",
-        "<name>": "<folder>",
-        "<name>": "<package>"
-      },
-      "devDependencies": {
-        "<test-framework-name>": "<version>"
-      }
-    }
-
+```json
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "<name>": "<version>",
+    "<name>": "<folder>",
+    "<name>": "<package>"
+  },
+  "devDependencies": {
+    "<test-framework-name>": "<version>"
+  }
+}
+```
 
 Sample *[component][component]* enabled `component.json` file:
 
-    {
+```json
+{
 
-      "name":        "tip",
-      "repo":        "component/tip",
-      "description": "Tip component",
-      "version":     "0.0.1",
-      "keywords":    ["tooltip", "tip", "ui"],
-      "dependencies": {
-        "component/emitter": "*",
-        "component/jquery":  "*"
-      },
-      "scripts": ["index.js", "template.js"],
-      "styles":  ["tip.css"]
+  "name":        "tip",
+  "repo":        "component/tip",
+  "description": "Tip component",
+  "version":     "0.0.1",
+  "keywords":    ["tooltip", "tip", "ui"],
+  "dependencies": {
+    "component/emitter": "*",
+    "component/jquery":  "*"
+  },
+  "scripts": ["index.js", "template.js"],
+  "styles":  ["tip.css"]
 
-    }
-
+}
+```
 
 Sample *[jam][jam]* enabled `package.json` file:
 
-    {
+```json
+{
 
-      "name":        "csbp",
-      "version":     "0.0.1",
-      "description": "A Non-Framework Client-Side JavaScript/HTML5 Project Boilerplate",
+  "name":        "csbp",
+  "version":     "0.0.1",
+  "description": "A Non-Framework Client-Side JavaScript/HTML5 Project Boilerplate",
 
-      "dependencies": {
-        "jamjs":         "*",
-        "grunt-contrib": "*"
-      },
+  "dependencies": {
+    "jamjs":         "*",
+    "grunt-contrib": "*"
+  },
 
-      "devDependencies": {
-        "chai":          "*",
-        "mocha":         "*",
-        "sinon":         "*",
-        "grunt-mocha":   "*"
-      },
+  "devDependencies": {
+    "chai":          "*",
+    "mocha":         "*",
+    "sinon":         "*",
+    "grunt-mocha":   "*"
+  },
 
-      "jam": {
-        "packageDir": "src/libs/js",
-        "baseUrl":    "src/main/js"
-      }
+  "jam": {
+    "packageDir": "src/libs/js",
+    "baseUrl":    "src/main/js"
+  }
 
-    }
-
+}
+```
 
 Sample *[volo][volo]* enabled `package.json` file:
 
-    {
+```json
+ {
 
-      "name":            "csbp",
-      "version":         "0.0.1",
-      "description":     "A Non-Framework Client-Side JavaScript/HTML5 Project Boilerplate",
+  "name":            "csbp",
+  "version":         "0.0.1",
+  "description":     "A Non-Framework Client-Side JavaScript/HTML5 Project Boilerplate",
 
-      "dependencies": {
-      },
+  "dependencies": {
+  },
 
-      "devDependencies": {
-        "yeti":          "*",
-        "docco":         "*",
-        "jshint":        "*",
-        "chai":          "*",
-        "mocha":         "*",
-        "sinon":         "*"
-      },
+  "devDependencies": {
+    "yeti":          "*",
+    "docco":         "*",
+    "jshint":        "*",
+    "chai":          "*",
+    "mocha":         "*",
+    "sinon":         "*"
+  },
 
-      "amd":  {},
+  "amd":  {},
 
-      "volo": {
-        "baseUrl":       "src/js/lib",
+  "volo": {
+    "baseUrl":       "src/js/lib",
 
-        "dependencies":  {
-          "page":        "github:visionmedia/page.js",
-          "requirejs":   "*"
-        }
-      }
-
+    "dependencies":  {
+      "page":        "github:visionmedia/page.js",
+      "requirejs":   "*"
     }
+  }
+
+}
+```
 
 Sample *[npm][npm] + [browserify][browserify]* enabled `package.json` file:
 
-    {
-      "name": "{{project}}",
-      "version": "1.0.0",
-      "description": "{{description}}",
+```json
+{
+  "name": "{{project}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
 
-      "repository": "git://github.com/{{author}}/{{project}}.git",
-      "main": "index.js",
+  "repository": "git://github.com/{{author}}/{{project}}.git",
+  "main": "index.js",
 
-      "dependencies": {
-        "hyperquest": "~0.1.0"
-      },
-      "devDependencies": {
-        "mocha": "*"
-      },
+  "dependencies": {
+    "hyperquest": "~0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
 
-      "licenses": "MIT"
-    }
+  "licenses": "MIT"
+}
+```
 
 **NOTES**:
 
