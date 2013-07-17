@@ -209,7 +209,7 @@ The following table details where each tool stores downloaded packages.
  Path           | [bower][bower]      | [component][component] | [jam][jam]     | [volo][volo]                        | [npm][npm] + [browserify][browserify]
 :---------------|:--------------------|:-----------------------|:---------------|:------------------------------------|:---------------
  `default path` | ./components        | ./components           | ./jam          | ./js, ./scripts, ./                 | ./node_modules
- `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | ✗
+ `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | -
 
 
 **NOTES**:
@@ -248,11 +248,11 @@ The following table details the responsibilities the given tool takes on.
  Responsibilities        |  [bower][bower] | [component][component] | [jam][jam] |  [volo][volo] | [npm][npm] + [browserify][browserify]
 :------------------------|:----------------|:-----------------------|:-----------|:--------------|:--------------------------------------
  `package management`    |  ✓              | ✓                      | ✓          |  ✓            | ✓ (npm)
- `project bootstrapping` |  ✗              | ✓                      | ✗          |  ✓            | ✓ 
- `project scaffolding`   |  ✗              | ✗                      | ✗          |  ✓            | ✗
- `build automation`      |  ✗              | ✗                      | ✗          |  ✓            | ✗
- `script/module loading` |  ✗              | ✗                      | ✓          |  ✗            | ✗
- `compile/build`         |  ✗              | ✓                      | ✗          |  ✗            | ✓ (browserify)
+ `project bootstrapping` |  -              | ✓                      | -          |  ✓            | ✓ 
+ `project scaffolding`   |  -              | -                      | -          |  ✓            | -
+ `build automation`      |  -              | -                      | -          |  ✓            | -
+ `script/module loading` |  -              | -                      | ✓          |  -            | -
+ `compile/build`         |  -              | ✓                      | -          |  -            | ✓ (browserify)
 
 
 **NOTES**:
@@ -270,7 +270,7 @@ The following table details which tools require a build/compile step during deve
 
  Build/Compile? | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
 :---------------|:---------------|:-----------------------|:-----------|:-------------|:-------------------------------------
- `?`            | ✗              | ✓ (component build)    | ✗          | ✗            | ✓ (browserify)
+ `?`            | -              | ✓ (component build)    | -          | -            | ✓ (browserify)
 
 
 **NOTES**:
@@ -286,7 +286,7 @@ The following table details which tools expose a central "registry".
 
  Registry? | [bower][bower] | [component][component] | [jam][jam]    | [volo][volo] | [npm][npm] + [browserify][browserify]
 :----------|:---------------|:-----------------------|:--------------|:-------------|:-------------------------------------
- `?`       | [✓][bower-reg] | [✓][component-reg]     | [✓][jam-reg] | ✗            | [✓][npm]
+ `?`       | [✓][bower-reg] | [✓][component-reg]     | [✓][jam-reg] | -            | [✓][npm]
 
 
 **NOTES**:
@@ -305,11 +305,11 @@ The following table details the method by which each tool allows you to specify 
 :-----------------------|:---------------|:-----------------------|:-------------|:--------------------|:--
  `git / github`         | ✓              | ✓                      | ✓ (CLI ONLY) | ✓                   | ✓
  `private repositories` | ✓              | ✓                      | ✓            | ✓ (SEE NOTES BELOW) | ✓
- `local repositories`   | ✓              | ✓                      | ✗            | ✗                   | ✓
- `zip / tarball`        | ✓              | ✗                      | ✓ (CLI ONLY) | ✓ (ZIPBALL ONLY)    | ✓
- `HTTP/HTTPS URL`       | ✓              | ✗                      | ✗            | ✗                   | ✓
- `NPM`                  | ✓              | ✗                      | ✗            | ✗                   | ✓
- `registry`             | ✓              | ✗                      | ✗            | ✗                   | ✓
+ `local repositories`   | ✓              | ✓                      | -            | -                   | ✓
+ `zip / tarball`        | ✓              | -                      | ✓ (CLI ONLY) | ✓ (ZIPBALL ONLY)    | ✓
+ `HTTP/HTTPS URL`       | ✓              | -                      | -            | -                   | ✓
+ `NPM`                  | ✓              | -                      | -            | -                   | ✓
+ `registry`             | ✓              | -                      | -            | -                   | ✓
 
 
 **NOTES**:
@@ -344,10 +344,10 @@ The following table details the JavaScript format each tool expects/handles.
 
  Format               | [bower][bower]      | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
 :---------------------|:--------------------|:-----------------------|:-----------|:-------------|:-------------------------------------
- `Global Script`      | ✓                   | ✓ (`--standalone`)     | ✓          | ✓            | ✗
- `AMD`                | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | ✗
- `CommonJS/NodeJS`    | ✓ (format agnostic) | ✓ (uses CJS style)     | ✗          | ✗            | ✓
- `CommonJS (WRAPPED)` | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | ✗
+ `Global Script`      | ✓                   | ✓ (`--standalone`)     | ✓          | ✓            | -
+ `AMD`                | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -
+ `CommonJS/NodeJS`    | ✓ (format agnostic) | ✓ (uses CJS style)     | -          | -            | ✓
+ `CommonJS (WRAPPED)` | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -
 
 
 **NOTES**:
@@ -394,8 +394,8 @@ The following table details the module/script loader supported by each tool.
 
  Source                 | [bower][bower] | [component][component] | [jam][jam]     | [volo][volo] | [npm][npm] + [browserify][browserify]
 :-----------------------|:---------------|:-----------------------|:---------------|:-------------|:-------------------------------------
- `Bring your own loader`| ✓              | ✗                      |  ✗             | ✓            | ✓ ([can create multiple bundles](https://github.com/substack/node-browserify#multiple-bundles))
- `Includes a Loader`    | ✗              | ✓ (custom require)     |  ✓ (RequireJS) | ✗            | ✓
+ `Bring your own loader`| ✓              | -                      |  -             | ✓            | ✓ ([can create multiple bundles](https://github.com/substack/node-browserify#multiple-bundles))
+ `Includes a Loader`    | -              | ✓ (custom require)     |  ✓ (RequireJS) | -            | ✓
 
 
 **NOTES**:
@@ -420,8 +420,8 @@ The following table details the the types of source files that can be contained 
  Source       | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
 :-------------|:---------------|:-----------------------|:-----------|:-------------|:-------------------------------------
  `JavaScript` | ✓              | ✓                      | ✓          | ✓            | ✓
- `HTML`       | ✓              | ✓                      | ✓          | ✗            | ✗
- `CSS`        | ✓              | ✓                      | ✓          | ✗            | ✗
+ `HTML`       | ✓              | ✓                      | ✓          | -            | -
+ `CSS`        | ✓              | ✓                      | ✓          | -            | -
 
 
 **NOTES**:
@@ -467,7 +467,7 @@ Symbols Used
 ------------------------------------------------------------
 
 ✓
-✗
+-
 
 
 
