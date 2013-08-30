@@ -444,7 +444,7 @@ Library and component authors may want to consider:
 Complementary Resources
 ------------------------------------------------------------
 
-Below are a list of resources that will likely be useful to you if you found this comparison useful:
+Below is a list of resources that will likely be useful to you if you found this comparison useful:
 
 -   [Package Managers: An Introductory Guide For The Uninitiated Front-End Developer](http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer)
 -   [Browser field spec for package.json](https://gist.github.com/shtylman/4339901)
@@ -468,11 +468,6 @@ Symbols Used
 
 ✓
 -
-
-
-
-
-
 
 
 [bower]:         http://bower.io
