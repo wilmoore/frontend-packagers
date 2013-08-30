@@ -460,7 +460,7 @@ Below is a list of resources that will likely be useful to you if you found this
 Contributing
 ------------------------------------------------------------
 
-I am sure I've made a few gramatical and spelling errors. I've probably even made comparison errors in a few spots. Please feel free to speak up or submit a pull request.
+I am sure I've made a few grammatical and spelling errors. I've probably even made comparison errors in a few spots. Please feel free to speak up or submit a pull request.
 
 
 Symbols Used
