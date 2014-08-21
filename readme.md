@@ -29,6 +29,7 @@ The following tools have caught my attention:
 -   [jam][jam]
 -   [volo][volo]
 -   [npm][npm] with [browserify][browserify]
+-   [spm][spm]
 
 
 **NOTES**:
@@ -59,9 +60,9 @@ Configuration File
 The following table provides the name of the "manifest" file where you specify dependencies and/or the details of your package.
 
 
- Configuration | [bower][bower] | [component][component] | [jam][jam]              | [volo][volo]            | [npm][npm]
-:--------------|:---------------|:-----------------------|:------------------------|:------------------------|:--------
- `filename`    | bower.json     | component.json         | [package.json][package] | [package.json][package] | [package.json][package]
+ Configuration | [bower][bower] | [component][component] | [jam][jam]              | [volo][volo]            | [npm][npm]              | [spm][spm]
+:--------------|:---------------|:-----------------------|:------------------------|:------------------------|:------------------------|:-----
+ `filename`    | bower.json     | component.json         | [package.json][package] | [package.json][package] | [package.json][package] | [package.json][package] 
 
 Sample *[bower][bower]* enabled `bower.json` file:
 
@@ -191,6 +192,28 @@ Sample *[npm][npm] + [browserify][browserify]* enabled `package.json` file:
 }
 ```
 
+Sample *[spm][spm]* enabled `package.json` file:
+
+```json
+{
+  "name": "{{project}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+
+  "repository": "git://github.com/{{author}}/{{project}}.git",
+
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+      "moment": "2.8.1",
+      "jquery": "1.11.1"
+    }
+  },
+
+  "licenses": "MIT"
+}
+```
+
 **NOTES**:
 
 -   There is an interesting discussion regarding some of the [reasoning](https://github.com/bower/bower/pull/62#issuecomment-8630878) [behind](https://github.com/bower/bower/pull/62#issuecomment-8627442) *[bower][bower]* not supporting the well-known [package.json](https://github.com/bower/bower/pull/62) format.
@@ -206,10 +229,10 @@ Package Installation Location
 The following table details where each tool stores downloaded packages.
 
  
- Path           | [bower][bower]      | [component][component] | [jam][jam]     | [volo][volo]                        | [npm][npm] + [browserify][browserify]
-:---------------|:--------------------|:-----------------------|:---------------|:------------------------------------|:---------------
- `default path` | ./components        | ./components           | ./jam          | ./js, ./scripts, ./                 | ./node_modules
- `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | -
+ Path           | [bower][bower]      | [component][component] | [jam][jam]     | [volo][volo]                        | [npm][npm] + [browserify][browserify] | [spm][spm]
+:---------------|:--------------------|:-----------------------|:---------------|:------------------------------------|:--------------------------------------|:---------------------
+ `default path` | ./components        | ./components           | ./jam          | ./js, ./scripts, ./                 | ./node_modules                        | ./spm_modules
+ `custom path`  | [.bowerrc][bowerrc] | --out dir              | jam.packageDir | volo.{baseDir,baseUrl}, amd.baseDir | -                                     | --outputDirectory dir
 
 
 **NOTES**:
@@ -229,9 +252,9 @@ Development Dependencies
 The following table details whether each tool allows specifying development dependencies.
 
 
- Development Dependencies | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
-:-------------------------|:---------------|:-----------------------|:-----------|:-------------|:-----------
- `devDependencies`        | ✓              | ✓                      | ✓          | ✓            | ✓
+ Development Dependencies | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]  | [spm][spm]
+:-------------------------|:---------------|:-----------------------|:-----------|:-------------|:---------------------------------------|:-----------
+ `devDependencies`        | ✓              | ✓                      | ✓          | ✓            | ✓                                      | ✓
 
 
 **NOTES**:
@@ -245,14 +268,14 @@ Responsibilities
 The following table details the responsibilities the given tool takes on.
 
 
- Responsibilities        |  [bower][bower] | [component][component] | [jam][jam] |  [volo][volo] | [npm][npm] + [browserify][browserify]
-:------------------------|:----------------|:-----------------------|:-----------|:--------------|:--------------------------------------
- `package management`    |  ✓              | ✓                      | ✓          |  ✓            | ✓ (npm)
- `project bootstrapping` |  -              | ✓                      | -          |  ✓            | ✓ 
- `project scaffolding`   |  -              | -                      | -          |  ✓            | -
- `build automation`      |  -              | -                      | -          |  ✓            | -
- `script/module loading` |  -              | -                      | ✓          |  -            | -
- `compile/build`         |  -              | ✓                      | -          |  -            | ✓ (browserify)
+ Responsibilities        |  [bower][bower] | [component][component] | [jam][jam] |  [volo][volo] | [npm][npm] + [browserify][browserify] | [spm][spm]
+:------------------------|:----------------|:-----------------------|:-----------|:--------------|:--------------------------------------|:-----------
+ `package management`    |  ✓              | ✓                      | ✓          |  ✓            | ✓ (npm)                               | ✓
+ `project bootstrapping` |  -              | ✓                      | -          |  ✓            | ✓                                     | ✓
+ `project scaffolding`   |  -              | -                      | -          |  ✓            | -                                     | -
+ `build automation`      |  -              | -                      | -          |  ✓            | -                                     | -
+ `script/module loading` |  -              | -                      | ✓          |  -            | -                                     | ✓
+ `compile/build`         |  -              | ✓                      | -          |  -            | ✓ (browserify)                        | ✓
 
 
 **NOTES**:
@@ -268,9 +291,9 @@ Build/Compile
 The following table details which tools require a build/compile step during development.
 
 
- Build/Compile? | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
-:---------------|:---------------|:-----------------------|:-----------|:-------------|:-------------------------------------
- `?`            | -              | ✓ (component build)    | -          | -            | ✓ (browserify)
+ Build/Compile? | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify] | [spm][spm]
+:---------------|:---------------|:-----------------------|:-----------|:-------------|:--------------------------------------|:-----------
+ `?`            | -              | ✓ (component build)    | -          | -            | ✓ (browserify)                        | ✓ (spm build)
 
 
 **NOTES**:
@@ -284,9 +307,9 @@ Central Registry
 The following table details which tools expose a central "registry".
 
 
- Registry? | [bower][bower] | [component][component] | [jam][jam]    | [volo][volo] | [npm][npm] + [browserify][browserify]
-:----------|:---------------|:-----------------------|:--------------|:-------------|:-------------------------------------
- `?`       | [✓][bower-reg] | [✓][component-reg]     | [✓][jam-reg] | -            | [✓][npm]
+ Registry? | [bower][bower] | [component][component] | [jam][jam]    | [volo][volo] | [npm][npm] + [browserify][browserify] | [spm][spm]
+:----------|:---------------|:-----------------------|:--------------|:-------------|:------------------------------------- |:-----------
+ `?`       | [✓][bower-reg] | [✓][component-reg]     | [✓][jam-reg]  | -            | [✓][npm]                              | [✓][spm]
 
 
 **NOTES**:
@@ -301,15 +324,15 @@ Package installation sources
 The following table details the method by which each tool allows you to specify each dependency (i.e. `dependencies`).
 
 
- Source                 | [bower][bower] | [component][component] | [jam][jam]   | [volo][volo]        | [npm][npm] + [browserify][browserify]
-:-----------------------|:---------------|:-----------------------|:-------------|:--------------------|:--
- `git / github`         | ✓              | ✓                      | ✓ (CLI ONLY) | ✓                   | ✓
- `private repositories` | ✓              | ✓                      | ✓            | ✓ (SEE NOTES BELOW) | ✓
- `local repositories`   | ✓              | ✓                      | -            | -                   | ✓
- `zip / tarball`        | ✓              | -                      | ✓ (CLI ONLY) | ✓ (ZIPBALL ONLY)    | ✓
- `HTTP/HTTPS URL`       | ✓              | -                      | -            | -                   | ✓
- `NPM`                  | ✓              | -                      | -            | -                   | ✓
- `registry`             | ✓              | -                      | -            | -                   | ✓
+ Source                 | [bower][bower] | [component][component] | [jam][jam]   | [volo][volo]        | [npm][npm] + [browserify][browserify] | [spm][spm]
+:-----------------------|:---------------|:-----------------------|:-------------|:--------------------|:--------------------------------------|:-----------
+ `git / github`         | ✓              | ✓                      | ✓ (CLI ONLY) | ✓                   | ✓                                     | -
+ `private repositories` | ✓              | ✓                      | ✓            | ✓ (SEE NOTES BELOW) | ✓                                     | -
+ `local repositories`   | ✓              | ✓                      | -            | -                   | ✓                                     | ✓
+ `zip / tarball`        | ✓              | -                      | ✓ (CLI ONLY) | ✓ (ZIPBALL ONLY)    | ✓                                     | -
+ `HTTP/HTTPS URL`       | ✓              | -                      | -            | -                   | ✓                                     | -
+ `NPM`                  | ✓              | -                      | -            | -                   | ✓                                     | -
+ `registry`             | ✓              | -                      | -            | -                   | ✓                                     | -
 
 
 **NOTES**:
@@ -325,9 +348,9 @@ Speed
 The following table details the speed of each tool.
 
 
-  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo] | [npm][npm]
-:------------------------|:------------------------|:------------------------|:------------------------|:--------------|:-----------
-  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s         |  ~40s
+  Registry?              |  [bower][bower]         |  [component][component] |  [jam][jam]             |  [volo][volo] | [npm][npm] | [spm][spm]
+:------------------------|:------------------------|:------------------------|:------------------------|:--------------|:-----------|:-----------
+  `~85 components`       |  ~80s                   |  ~10s                   |  ~80s                   |  ~80s         |  ~40s      |  ~20s
 
 
 **NOTES**:
@@ -342,12 +365,12 @@ Supported JavaScript Module formats
 The following table details the JavaScript format each tool expects/handles.
 
 
- Format               | [bower][bower]      | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
-:---------------------|:--------------------|:-----------------------|:-----------|:-------------|:-------------------------------------
- `Global Script`      | ✓                   | ✓ (`--standalone`)     | ✓          | ✓            | -
- `AMD`                | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -
- `CommonJS/NodeJS`    | ✓ (format agnostic) | ✓ (uses CJS style)     | -          | -            | ✓
- `CommonJS (WRAPPED)` | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -
+ Format               | [bower][bower]      | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify] | [spm][spm]
+:---------------------|:--------------------|:-----------------------|:-----------|:-------------|:--------------------------------------|:-----------
+ `Global Script`      | ✓                   | ✓ (`--standalone`)     | ✓          | ✓            | -                                     | -
+ `AMD`                | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -                                     | -
+ `CommonJS/NodeJS`    | ✓ (format agnostic) | ✓ (uses CJS style)     | -          | -            | ✓                                     | ✓
+ `CommonJS (WRAPPED)` | ✓ (format agnostic) | ✓ (`--standalone`)     | ✓          | ✓            | -                                     | -
 
 
 **NOTES**:
@@ -392,10 +415,10 @@ Module / Script Loader
 The following table details the module/script loader supported by each tool.
 
 
- Source                 | [bower][bower] | [component][component] | [jam][jam]     | [volo][volo] | [npm][npm] + [browserify][browserify]
-:-----------------------|:---------------|:-----------------------|:---------------|:-------------|:-------------------------------------
- `Bring your own loader`| ✓              | -                      |  -             | ✓            | ✓ ([can create multiple bundles](https://github.com/substack/node-browserify#multiple-bundles))
- `Includes a Loader`    | -              | ✓ (custom require)     |  ✓ (RequireJS) | -            | ✓
+ Source                 | [bower][bower] | [component][component] | [jam][jam]     | [volo][volo] | [npm][npm] + [browserify][browserify]                                                           | [spm][spm]
+:-----------------------|:---------------|:-----------------------|:---------------|:-------------|:------------------------------------------------------------------------------------------------|:-----------
+ `Bring your own loader`| ✓              | -                      |  -             | ✓            | ✓ ([can create multiple bundles](https://github.com/substack/node-browserify#multiple-bundles)) | -
+ `Includes a Loader`    | -              | ✓ (custom require)     |  ✓ (RequireJS) | -            | ✓                                                                                               | ✓ (Sea.js)
 
 
 **NOTES**:
@@ -409,7 +432,7 @@ Loaders that you might be interested in:
 -   [cajon](https://github.com/requirejs/cajon)
 -   [almond](https://github.com/jrburke/almond)
 -   [Shepherd-js](http://xcambar.github.com/shepherd-js/)
-
+-   [Sea.js](http://seajs.org)
 
 Package Contents
 ------------------------------------------------------------
@@ -417,11 +440,11 @@ Package Contents
 The following table details the the types of source files that can be contained in each package per tool.
 
 
- Source       | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify]
-:-------------|:---------------|:-----------------------|:-----------|:-------------|:-------------------------------------
- `JavaScript` | ✓              | ✓                      | ✓          | ✓            | ✓
- `HTML`       | ✓              | ✓                      | ✓          | -            | -
- `CSS`        | ✓              | ✓                      | ✓          | -            | -
+ Source       | [bower][bower] | [component][component] | [jam][jam] | [volo][volo] | [npm][npm] + [browserify][browserify] | [spm][spm]
+:-------------|:---------------|:-----------------------|:-----------|:-------------|:------------------------------------- |:-----------
+ `JavaScript` | ✓              | ✓                      | ✓          | ✓            | ✓                                     | ✓
+ `HTML`       | ✓              | ✓                      | ✓          | -            | -                                     | ✓
+ `CSS`        | ✓              | ✓                      | ✓          | -            | -                                     | ✓
 
 
 **NOTES**:
@@ -476,6 +499,7 @@ Symbols Used
 [volo]:          http://volojs.org
 [npm]:           https://npmjs.org/
 [browserify]:    http://browserify.org/
+[spm]:           http://spmjs.io
 [brfs]:          https://github.com/substack/brfs
 [requirejs]:     http://requirejs.org/
 [packagist]:     http://packagist.org/about
