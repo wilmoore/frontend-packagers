@@ -314,7 +314,6 @@ The following table details which tools expose a central "registry".
 
 **NOTES**:
 
--  The *[bower][bower]* "registry" is only a convenient [shorturl service](https://github.com/bower/bower/issues/10#issuecomment-8547463).
 -  It is good etiquette to use [user/package namespacing][packagist] when registering a package (except in npm)
 
 
