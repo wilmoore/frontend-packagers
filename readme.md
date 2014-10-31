@@ -62,7 +62,7 @@ The following table provides the name of the "manifest" file where you specify d
 
  Configuration | [bower][bower] | [component][component] | [jam][jam]              | [volo][volo]            | [npm][npm]              | [spm][spm]
 :--------------|:---------------|:-----------------------|:------------------------|:------------------------|:------------------------|:-----
- `filename`    | bower.json     | component.json         | [package.json][package] | [package.json][package] | [package.json][package] | [package.json][package] 
+ `filename`    | [bower.json](bower-spec)     | [component.json](component-spec)         | [package.json][package] | [package.json][package] | [package.json][package] | [package.json][package] 
 
 Sample *[bower][bower]* enabled `bower.json` file:
 
@@ -494,7 +494,7 @@ Symbols Used
 
 
 [bower]:         http://bower.io
-[component]:     https://github.com/component/component
+[component]:     https://github.com/componentjs/component
 [jam]:           http://jamjs.org
 [volo]:          http://volojs.org
 [npm]:           https://npmjs.org/
@@ -507,11 +507,13 @@ Symbols Used
 [make]:          http://www.gnu.org/software/make/
 [grunt]:         http://gruntjs.com/
 [bi18]:          https://github.com/bower/bower/issues/18
-[package]:       http://package.json.jit.su
+[package]:       http://browsenpm.org/package.json
 [bowerrc]:       https://github.com/bower/bower#configuration
+[bower-spec]     https://github.com/bower/bower.json-spec
+[component-spec] https://github.com/componentjs/spec/blob/master/component.json/specifications.md
 
-[bower-reg]:     http://sindresorhus.com/bower-components
-[component-reg]: http://component.io
+[bower-reg]:     http://bower.io/search
+[component-reg]: http://component.github.io
 [jam-reg]:       http://jamjs.org/packages
 
 [@wilmoore]:     http://twitter.com/wilmoore
