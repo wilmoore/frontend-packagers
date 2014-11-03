@@ -508,8 +508,8 @@ Symbols Used
 [bi18]:          https://github.com/bower/bower/issues/18
 [package]:       http://browsenpm.org/package.json
 [bowerrc]:       https://github.com/bower/bower#configuration
-[bower-spec]     https://github.com/bower/bower.json-spec
-[component-spec] https://github.com/componentjs/spec/blob/master/component.json/specifications.md
+[bower-spec]:    https://github.com/bower/bower.json-spec
+[component-spec]:https://github.com/componentjs/spec/blob/master/component.json/specifications.md
 
 [bower-reg]:     http://bower.io/search
 [component-reg]: http://component.github.io
