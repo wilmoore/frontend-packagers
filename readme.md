@@ -62,7 +62,7 @@ The following table provides the name of the "manifest" file where you specify d
 
  Configuration | [bower][bower] | [component][component] | [jam][jam]              | [volo][volo]            | [npm][npm]              | [spm][spm]
 :--------------|:---------------|:-----------------------|:------------------------|:------------------------|:------------------------|:-----
- `filename`    | [bower.json](bower-spec)     | [component.json](component-spec)         | [package.json][package] | [package.json][package] | [package.json][package] | [package.json][package] 
+ `filename`    | [bower.json][bower-spec]     | [component.json][component-spec]         | [package.json][package] | [package.json][package] | [package.json][package] | [package.json][package] 
 
 Sample *[bower][bower]* enabled `bower.json` file:
 
