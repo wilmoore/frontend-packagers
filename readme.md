@@ -468,6 +468,7 @@ Complementary Resources
 
 Below is a list of resources that will likely be useful to you if you found this comparison useful:
 
+-   [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.com/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.fmjrjz3tz)
 -   [Package Managers: An Introductory Guide For The Uninitiated Front-End Developer](http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer)
 -   [Browser field spec for package.json](https://gist.github.com/shtylman/4339901)
 -   [Landscaping With Front-end Tools](https://github.com/codylindley/frontend-tools)
